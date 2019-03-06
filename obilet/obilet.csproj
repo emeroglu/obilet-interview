@@ -84,6 +84,11 @@
   <ItemGroup>
     <Content Include="Files\css\main.css" />
     <Content Include="Files\init.js" />
+    <Content Include="Files\js\abstract\WebRequest.js" />
+    <Content Include="Files\js\services\api.js" />
+    <Content Include="Files\js\services\bcast.js" />
+    <Content Include="Files\js\services\css.js" />
+    <Content Include="Files\js\services\http.js" />
     <Content Include="Files\js\tools\fetch.js" />
     <Content Include="Files\js\tools\js.js" />
     <Content Include="Files\js\modules\journey\module.js" />
@@ -114,7 +119,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Files\js\abstract\" />
     <Folder Include="Files\js\modules\journey\pages\" />
     <Folder Include="Files\js\modules\journey\ui\" />
     <Folder Include="Files\js\ui\" />
