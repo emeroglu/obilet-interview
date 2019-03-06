@@ -57,9 +57,9 @@ namespace obilet.Controllers
             stream.Close();
 
             stream.Dispose();
-            reader.Dispose();            
+            reader.Dispose();
 
-            Response.ContentType = "text/javascript";
+            Response.ContentType = ContentTypes.Javascript;
             Response.Cache.SetCacheability(HttpCacheability.NoCache);
             Response.Cache.SetMaxAge(TimeSpan.FromSeconds(0));
             Response.Cache.SetRevalidation(HttpCacheRevalidation.None);
@@ -104,8 +104,7 @@ namespace obilet.Controllers
                 Cache.Style = styles;
             }
 
-            Response.ContentType = "text/css";
-            Response.Headers.Add("Access-Control-Allow-Origin", "*");
+            Response.ContentType = ContentTypes.Stylesheet;            
             Response.Cache.SetCacheability(HttpCacheability.Private);
             Response.Cache.SetMaxAge(TimeSpan.FromSeconds(31568000));
             Response.Cache.SetRevalidation(HttpCacheRevalidation.None);
@@ -157,8 +156,7 @@ namespace obilet.Controllers
                 Cache.Script = script;
             }
 
-            Response.ContentType = "text/javascript";
-            Response.Headers.Add("Access-Control-Allow-Origin", "*");
+            Response.ContentType = ContentTypes.Javascript;            
             Response.Cache.SetCacheability(HttpCacheability.Private);
             Response.Cache.SetMaxAge(TimeSpan.FromSeconds(31568000));
             Response.Cache.SetRevalidation(HttpCacheRevalidation.None);
@@ -211,8 +209,7 @@ namespace obilet.Controllers
                 Cache.Modules[module] = script;
             }
 
-            Response.ContentType = "text/javascript";
-            Response.Headers.Add("Access-Control-Allow-Origin", "*");
+            Response.ContentType = ContentTypes.Javascript;            
             Response.Cache.SetCacheability(HttpCacheability.Private);
             Response.Cache.SetMaxAge(TimeSpan.FromSeconds(31568000));
             Response.Cache.SetRevalidation(HttpCacheRevalidation.None);

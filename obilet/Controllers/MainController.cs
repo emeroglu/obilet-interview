@@ -1,4 +1,5 @@
-﻿using System;
+﻿using obilet.Repository;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -25,7 +26,7 @@ namespace obilet.Controllers
 
             html = html.Replace("       <", "<").Replace("   <", "<");
 
-            Response.ContentType = "text/html";
+            Response.ContentType = ContentTypes.Html;
             Response.Cache.SetCacheability(HttpCacheability.Private);
             Response.Cache.SetMaxAge(TimeSpan.FromSeconds(31568000));
             Response.Cache.SetRevalidation(HttpCacheRevalidation.None);
