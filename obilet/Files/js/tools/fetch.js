@@ -1,58 +1,58 @@
 ﻿$js.compile("$fetch", null, function ($public, $private, $protected, $self) {
 
-    var self = this;
+    $private.field.index = -1;
+    $private.field.queue = [];
 
-    self._index = -1;
-    self._queue = [];
+    $public.delegate.begin = function () { $self.index = -1; $self.queue = []; return $self; };
 
-    self.begin = function () { self._index = -1; self._queue = []; return self; };
+    $public.delegate.addStylesheet = function (_url) { $self.queue.push({ type: "stylesheet", url: _url }); return $self };
+    $public.delegate.addScript = function (_url) { $self.queue.push({ type: "script", url: _url }); return $self };
 
-    self.queueStylesheet = function (url) { self._queue.push({ type: "stylesheet", url: url }); return self; };
-    self.queueScript = function (url) { self._queue.push({ type: "script", url: url }); return self; };
+    $private.void.on_fetch = function () { };
+    $public.delegate.onFetch = function ($delegate) { $self.on_fetch = $delegate; return $self; }
 
-    self.on_fetch = function () { };
-    self.onFetch = function (delegate) { self.on_fetch = delegate; return self; };
+    $private.void.on_recurse_end = function () { };
+    $private.void.recurse = function () {
 
-    self._on_recurse_end = function () { };
-    self._recurse = function () {
+        $self.index++;
 
-        self._index++;
+        if ($self.index == $self.queue.length) {
 
-        if (self._index == self._queue.length) {
-
-            self._on_recurse_end();
+            $self.on_recurse_end();
 
             return;
 
+        } else {
+
+            let item = $self.queue[$self.index];
+
+            eval("$self." + item.type + "(item.url, $self.recurse);");
+
         }
-
-        var item = self._queue[self._index];
-
-        eval("self." + item.type + "(item.url, self._recurse);");
 
     };
 
-    self.stylesheet = function (href, onload) {
+    $private.void.stylesheet = function (_url, $on_load) {
 
-        var e = document.createElement("link");
+        let e = document.createElement("link");
         e.setAttribute("rel", "stylesheet");
-        e.setAttribute("href", href);
-        e.onload = onload;
+        e.setAttribute("href", _url);
+        e.onload = $on_load;
 
         document.head.appendChild(e);
 
     };
 
-    self.script = function (src, onload) {
+    $private.void.script = function (_url, $on_load) {
 
-        var e = document.createElement("script");
+        let e = document.createElement("script");
         e.setAttribute("type", "text/javascript");
-        e.setAttribute("src", src);
+        e.setAttribute("src", _url);
         e.onload = function () {
 
             this.remove();
 
-            onload();
+            $on_load();
 
         };
 
@@ -60,18 +60,18 @@
 
     };
 
-    self.module = function (name) {
+    $public.void.module = function (_name, $on_load) {
 
-        var url = "/File/Module/" + version + "/" + name.capitalize();
-        self.script(url, self.on_fetch);
-
-    };
-
-    self.start = function () {
-
-        self._on_recurse_end = self.on_fetch;
-        self._recurse();
+        let url = "/File/Module/" + version + "/" + name.capitalize();
+        $self.script(url, $on_load);
 
     };
 
-}
+    $public.void.start = function () {
+
+        $self.on_recurse_end = $self.on_fetch;
+        $self.recurse();
+
+    };
+
+};

@@ -84,6 +84,7 @@
   <ItemGroup>
     <Content Include="Files\css\main.css" />
     <Content Include="Files\init.js" />
+    <Content Include="Files\js\tools\fetch - Copy.js" />
     <Content Include="Files\js\tools\fetch.js" />
     <Content Include="Files\js\tools\js.js" />
     <Content Include="Files\js\modules\journey\module.js" />
