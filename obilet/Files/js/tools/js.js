@@ -239,3 +239,4 @@
     };
 
 };
+$global.$js = new $js();

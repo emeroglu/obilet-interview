@@ -62,7 +62,7 @@
 
     $public.void.module = function (_name, $on_load) {
 
-        let url = "/File/Module/" + version + "/" + name.capitalize();
+        let url = "/File/Module/" + version + "/" + _name;
         $self.script(url, $on_load);
 
     };
@@ -74,4 +74,4 @@
 
     };
 
-};
+});

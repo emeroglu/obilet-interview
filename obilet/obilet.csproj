@@ -84,7 +84,6 @@
   <ItemGroup>
     <Content Include="Files\css\main.css" />
     <Content Include="Files\init.js" />
-    <Content Include="Files\js\tools\fetch - Copy.js" />
     <Content Include="Files\js\tools\fetch.js" />
     <Content Include="Files\js\tools\js.js" />
     <Content Include="Files\js\modules\journey\module.js" />
@@ -105,6 +104,7 @@
   <ItemGroup>
     <Content Include="Files\config.json" />
     <Content Include="Files\js\modules\journey\config.json" />
+    <Content Include="Files\js\config.json" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

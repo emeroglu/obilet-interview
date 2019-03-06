@@ -68,6 +68,52 @@ namespace obilet.Controllers
         }
 
         [HttpGet]
+        public string Style(string p1)
+        {
+            string styles = "";
+
+            if (Cache.Style != "")
+            {
+                styles = Cache.Style;
+            }
+            else
+            {
+                List<string> listStyles = new List<string>();
+                
+                listStyles.Add("/Files/css/main.css");
+
+                FileStream stream;
+                StreamReader reader;
+
+                foreach (string style in listStyles)
+                {
+                    stream = new FileStream(Server.MapPath(style), FileMode.Open, FileAccess.Read);
+                    reader = new StreamReader(stream);
+
+                    styles += reader.ReadToEnd() + "\r\n\r\n";
+
+                    stream.Flush();
+                    stream.Close();
+
+                    stream.Dispose();
+                    reader.Dispose();
+                }
+
+                styles = styles.Replace("{version}", p1);
+
+                Cache.Style = styles;
+            }
+
+            Response.ContentType = "text/css";
+            Response.Headers.Add("Access-Control-Allow-Origin", "*");
+            Response.Cache.SetCacheability(HttpCacheability.Private);
+            Response.Cache.SetMaxAge(TimeSpan.FromSeconds(31568000));
+            Response.Cache.SetRevalidation(HttpCacheRevalidation.None);
+
+            return styles;
+        }
+
+        [HttpGet]
         public string Script(string p1)
         {
             string script = "";
@@ -83,7 +129,7 @@ namespace obilet.Controllers
                 FileStream stream;
                 StreamReader reader;
 
-                stream = new FileStream(Server.MapPath("/Files/config.json"), FileMode.Open, FileAccess.Read);
+                stream = new FileStream(Server.MapPath("/Files/js/config.json"), FileMode.Open, FileAccess.Read);
                 reader = new StreamReader(stream);
 
                 config = new JavaScriptSerializer().Deserialize<List<string>>(reader.ReadToEnd());
@@ -119,5 +165,60 @@ namespace obilet.Controllers
 
             return script;
         }
+
+        [HttpGet]
+        public string Module(string p1, string p2)
+        {
+            string script = "";
+            string module = p2.ToLower();
+
+            if (Cache.Modules.Keys.Contains(module))
+            {
+                script = Cache.Modules[module];
+            }
+            else
+            {
+                List<string> config;
+
+                FileStream stream;
+                StreamReader reader;
+
+                stream = new FileStream(Server.MapPath("/Files/js/modules/" + module + "/config.json"), FileMode.Open, FileAccess.Read);
+                reader = new StreamReader(stream);
+
+                config = new JavaScriptSerializer().Deserialize<List<string>>(reader.ReadToEnd());
+
+                stream.Flush();
+                stream.Close();
+
+                stream.Dispose();
+                reader.Dispose();
+
+                foreach (string s in config)
+                {
+                    stream = new FileStream(Server.MapPath(s), FileMode.Open, FileAccess.Read);
+                    reader = new StreamReader(stream);
+
+                    script += reader.ReadToEnd() + "\r\n\r\n";
+
+                    stream.Flush();
+                    stream.Close();
+
+                    stream.Dispose();
+                    reader.Dispose();
+                }
+
+                Cache.Modules[module] = script;
+            }
+
+            Response.ContentType = "text/javascript";
+            Response.Headers.Add("Access-Control-Allow-Origin", "*");
+            Response.Cache.SetCacheability(HttpCacheability.Private);
+            Response.Cache.SetMaxAge(TimeSpan.FromSeconds(31568000));
+            Response.Cache.SetRevalidation(HttpCacheRevalidation.None);
+
+            return script;
+        }
+
     }
 }

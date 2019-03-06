@@ -11,6 +11,7 @@ namespace obilet.Repository
         public static DateTime Last_Alive;
         public static DateTime Last_Refresh;
 
+        public static string Style;
         public static string Script;
         public static Dictionary<string, string> Modules;
     }
