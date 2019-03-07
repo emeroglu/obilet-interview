@@ -10,7 +10,7 @@ namespace obilet.Abstract
         [JsonProperty(PropertyName = "status")]
         public ResponseStates Status { get; set; }
 
-        [JsonProperty(PropertyName = "data")]
+        [JsonProperty(PropertyName = "data", NullValueHandling = NullValueHandling.Ignore)]
         public DataModelType Data { get; set; }
 
         [JsonProperty(PropertyName = "message")]

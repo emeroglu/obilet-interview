@@ -4,10 +4,13 @@ using System;
 
 namespace obilet.Abstract
 {
-    public class CorePostLoginRequestModel : CoreRequestModel
+    public class CorePostLoginRequestModel<DataModelType> : CoreRequestModel
     {
         [JsonProperty(PropertyName = "device-session")]        
         public JsonSession Session { get; set; }
+
+        [JsonProperty(PropertyName = "data", NullValueHandling = NullValueHandling.Ignore)]
+        public DataModelType Data { get; set; }
 
         [JsonConverter(typeof(CoreDateTimeConverter))]
         [JsonProperty(PropertyName = "date")]
