@@ -6,7 +6,7 @@ namespace obilet.Abstract
 {
     public class CorePostLoginRequestModel : CoreRequestModel
     {
-        [JsonProperty(PropertyName = "device-session")]
+        [JsonProperty(PropertyName = "device-session")]        
         public JsonSession Session { get; set; }
 
         [JsonConverter(typeof(CoreDateTimeConverter))]

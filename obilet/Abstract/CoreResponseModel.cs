@@ -1,10 +1,12 @@
 ﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
 using obilet.Enum;
 
 namespace obilet.Abstract
 {
     public class CoreResponseModel<DataModelType> where DataModelType : CoreDataModel
     {
+        [JsonConverter(typeof(StringEnumConverter))]
         [JsonProperty(PropertyName = "status")]
         public ResponseStates Status { get; set; }
 
