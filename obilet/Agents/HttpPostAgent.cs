@@ -1,5 +1,4 @@
 ﻿using Newtonsoft.Json;
-using obilet.Abstract;
 using System;
 using System.Net.Http;
 using System.Net.Http.Headers;
@@ -7,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace obilet.Agents
 {
-    public class HttpPostAgent<ResponseModelType>
+    public class HttpPostAgent<RequestModelType, ResponseModelType>
     {        
         public string Url { get; set; }
-        public object Body { get; set; }
+        public RequestModelType Body { get; set; }
 
         public Action<ResponseModelType> OnSuccess { get; set; }
 

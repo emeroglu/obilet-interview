@@ -122,6 +122,7 @@
     <Compile Include="Abstract\CoreResponseModel.cs" />
     <Compile Include="Agents\Agency.cs" />
     <Compile Include="Agents\HttpPostAgent.cs" />
+    <Compile Include="Api_Model\GetBusLocationsResponseModel.cs" />
     <Compile Include="Api_Model\GetBusLocationsRequestModel.cs" />
     <Compile Include="Api_Model\GetSessionResponseModel.cs" />
     <Compile Include="Api_Model\GetSessionRequestModel.cs" />
@@ -136,6 +137,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Json\JsonBrowser.cs" />
+    <Compile Include="Json\JsonBusLocation.cs" />
     <Compile Include="Json\JsonConnection.cs" />
     <Compile Include="Json\JsonLocation.cs" />
     <Compile Include="Json\JsonSession.cs" />

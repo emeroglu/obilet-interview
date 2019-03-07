@@ -4,7 +4,7 @@ using obilet.Enum;
 
 namespace obilet.Abstract
 {
-    public class CoreResponseModel<DataModelType> where DataModelType : CoreDataModel
+    public class CoreResponseModel<DataModelType>
     {
         [JsonConverter(typeof(StringEnumConverter))]
         [JsonProperty(PropertyName = "status")]

@@ -27,7 +27,7 @@ namespace obilet.Controllers
                 }
             };            
 
-            new HttpPostAgent<GetSessionResponseModel>()
+            new HttpPostAgent<GetSessionRequestModel, GetSessionResponseModel>()
             {
                 Url = Config.Get_Session,
                 Body = request,

@@ -1,6 +1,5 @@
 ﻿using Newtonsoft.Json;
 using obilet.Abstract;
-using obilet.Json;
 
 namespace obilet.Api_Model
 {
