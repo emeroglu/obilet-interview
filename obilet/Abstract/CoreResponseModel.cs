@@ -3,10 +3,13 @@ using obilet.Enum;
 
 namespace obilet.Abstract
 {
-    public class CoreResponseModel
+    public class CoreResponseModel<DataModelType> where DataModelType : CoreDataModel
     {
         [JsonProperty(PropertyName = "status")]
         public ResponseStates Status { get; set; }
+
+        [JsonProperty(PropertyName = "data")]
+        public DataModelType Data { get; set; }
 
         [JsonProperty(PropertyName = "message")]
         public string Message { get; set; }
@@ -19,5 +22,10 @@ namespace obilet.Abstract
 
         [JsonProperty(PropertyName = "controller")]
         public string Controller { get; set; }
+
+        public override string ToString()
+        {
+            return JsonConvert.SerializeObject(this);
+        }
     }
 }

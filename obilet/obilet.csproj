@@ -115,6 +115,7 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\CoreDataModel.cs" />
     <Compile Include="Abstract\CoreDateTimeConverter.cs" />
     <Compile Include="Abstract\CorePostLoginRequestModel.cs" />
     <Compile Include="Abstract\CoreRequestModel.cs" />
@@ -122,6 +123,7 @@
     <Compile Include="Agents\Agency.cs" />
     <Compile Include="Agents\HttpPostAgent.cs" />
     <Compile Include="Api_Model\GetBusLocationsRequestModel.cs" />
+    <Compile Include="Api_Model\GetSessionResponseModel.cs" />
     <Compile Include="Api_Model\GetSessionRequestModel.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AuthController.cs" />
