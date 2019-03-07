@@ -52,6 +52,7 @@
     <Reference Include="System.Net.Http, Version=4.1.1.3, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Net.Http.4.3.4\lib\net46\System.Net.Http.dll</HintPath>
     </Reference>
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security.Cryptography.Algorithms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.3.0\lib\net46\System.Security.Cryptography.Algorithms.dll</HintPath>
     </Reference>
@@ -114,8 +115,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\CoreDateTimeConverter.cs" />
+    <Compile Include="Abstract\CorePostLoginRequestModel.cs" />
+    <Compile Include="Abstract\CoreRequestModel.cs" />
+    <Compile Include="Abstract\CoreResponseModel.cs" />
     <Compile Include="Agents\Agency.cs" />
     <Compile Include="Agents\HttpPostAgent.cs" />
+    <Compile Include="Api_Model\GetBusLocationsRequestModel.cs" />
     <Compile Include="Api_Model\GetSessionRequestModel.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AuthController.cs" />
@@ -123,11 +129,13 @@
     <Compile Include="Controllers\JourneyController.cs" />
     <Compile Include="Controllers\MainController.cs" />
     <Compile Include="Controllers\SysController.cs" />
+    <Compile Include="Enum\ResponseStates.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Json\JsonBrowser.cs" />
     <Compile Include="Json\JsonConnection.cs" />
+    <Compile Include="Json\JsonSession.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\Cache.cs" />
     <Compile Include="Repository\Config.cs" />

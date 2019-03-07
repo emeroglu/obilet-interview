@@ -1,16 +1,8 @@
-﻿using obilet.Api_Model;
+﻿using obilet.Agents;
+using obilet.Api_Model;
 using obilet.Json;
 using obilet.Repository;
-using System;
-using System.Collections.Generic;
-using System.Dynamic;
-using System.Linq;
-using System.Net;
-using System.Web;
 using System.Web.Mvc;
-using System.Web.Script.Serialization;
-using System.Net.Http;
-using obilet.Agents;
 
 namespace obilet.Controllers
 {
