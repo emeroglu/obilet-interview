@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using obilet.Abstract;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +15,8 @@ namespace obilet.Json
         [JsonProperty(PropertyName = "station")]
         public string Station { get; set; }
 
-        [JsonProperty(PropertyName = "time")]
+        [JsonConverter(typeof(CoreDateTimeConverter))]
+        [JsonProperty(PropertyName = "time", NullValueHandling = NullValueHandling.Ignore)]
         public DateTime Time { get; set; }
 
         [JsonProperty(PropertyName = "is-origin")]

@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using obilet.Abstract;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,23 +24,25 @@ namespace obilet.Json
         [JsonProperty(PropertyName = "destination")]
         public string Destination { get; set; }
 
+        [JsonConverter(typeof(CoreDateTimeConverter))]
         [JsonProperty(PropertyName = "departure")]
         public DateTime Departure { get; set; }
 
-        [JsonProperty(PropertyName = "arrival")]
+        [JsonConverter(typeof(CoreDateTimeConverter))]
+        [JsonProperty(PropertyName = "arrival", NullValueHandling = NullValueHandling.Ignore)]
         public DateTime Arrival { get; set; }
 
         [JsonProperty(PropertyName = "currency")]
         public string Currency { get; set; }
 
-        [JsonProperty(PropertyName = "duration")]
+        [JsonProperty(PropertyName = "duration", NullValueHandling = NullValueHandling.Ignore)]
         public TimeSpan Duration { get; set; }
 
         [JsonProperty(PropertyName = "original-price")]
-        public int OriginalPrice { get; set; }
+        public decimal OriginalPrice { get; set; }
 
         [JsonProperty(PropertyName = "internet-price")]
-        public int InternetPrice { get; set; }
+        public decimal InternetPrice { get; set; }
 
         [JsonProperty(PropertyName = "booking")]
         public List<string> Booking { get; set; }
@@ -53,10 +56,10 @@ namespace obilet.Json
         [JsonProperty(PropertyName = "features")]
         public List<string> Features { get; set; }
 
-        [JsonProperty(PropertyName = "description")]
+        [JsonProperty(PropertyName = "description", NullValueHandling = NullValueHandling.Ignore)]
         public string Description { get; set; }
 
-        [JsonProperty(PropertyName = "available")]
+        [JsonProperty(PropertyName = "available", NullValueHandling = NullValueHandling.Ignore)]
         public bool Available { get; set; }
     }
 }

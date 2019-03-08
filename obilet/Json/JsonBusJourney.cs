@@ -62,7 +62,7 @@ namespace obilet.Json
         [JsonProperty(PropertyName = "disable-sales-without-gov-id")]
         public bool DisableSalesWithoutGovID { get; set; }
 
-        [JsonProperty(PropertyName = "display-offset")]
+        [JsonProperty(PropertyName = "display-offset", NullValueHandling = NullValueHandling.Ignore)]
         public TimeSpan DisplayOffset { get; set; }
 
         [JsonProperty(PropertyName = "partner-rating")]
