@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
-using obilet.Json;
+using obilet.Model.obilet.Abstract.Json;
 
-namespace obilet.Api_Model
+namespace obilet.Model.obilet
 {
     public class GetSessionRequestModel
     {

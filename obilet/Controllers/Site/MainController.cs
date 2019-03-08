@@ -3,7 +3,7 @@ using System;
 using System.Web;
 using System.Web.Mvc;
 
-namespace obilet.Controllers
+namespace obilet.Controllers.Site
 {
     public class MainController : Controller
     {

@@ -1,11 +1,8 @@
 ﻿using Newtonsoft.Json;
-using obilet.Abstract;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 
-namespace obilet.Json
+namespace obilet.Model.obilet.Abstract.Json
 {
     public class JsonJourney
     {

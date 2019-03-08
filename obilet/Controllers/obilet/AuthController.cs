@@ -1,10 +1,10 @@
 ﻿using obilet.Agents;
-using obilet.Api_Model;
-using obilet.Json;
+using obilet.Model.obilet;
+using obilet.Model.obilet.Abstract.Json;
 using obilet.Repository;
 using System.Web.Mvc;
 
-namespace obilet.Controllers
+namespace obilet.Controllers.obilet
 {
     public class AuthController : Controller
     {

@@ -1,8 +1,8 @@
-﻿using obilet.Abstract;
-using obilet.Json;
+﻿using obilet.Model.obilet.Abstract;
+using obilet.Model.obilet.Abstract.Json;
 using System.Collections.Generic;
 
-namespace obilet.Api_Model
+namespace obilet.Model.obilet
 {
     public class GetBusLocationsResponseModel : CoreResponseModel<GetBusLocationsDataModel>
     {        

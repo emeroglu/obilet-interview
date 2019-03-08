@@ -115,39 +115,39 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Abstract\CoreDataModel.cs" />
-    <Compile Include="Abstract\CoreDateTimeConverter.cs" />
-    <Compile Include="Abstract\CorePostLoginRequestModel.cs" />
-    <Compile Include="Abstract\CoreRequestModel.cs" />
-    <Compile Include="Abstract\CoreResponseModel.cs" />
+    <Compile Include="Model\obilet\Abstract\CoreDataModel.cs" />
+    <Compile Include="Model\obilet\Abstract\CoreDateTimeConverter.cs" />
+    <Compile Include="Model\obilet\Abstract\CorePostLoginRequestModel.cs" />
+    <Compile Include="Model\obilet\Abstract\CoreRequestModel.cs" />
+    <Compile Include="Model\obilet\Abstract\CoreResponseModel.cs" />
     <Compile Include="Agents\Agency.cs" />
     <Compile Include="Agents\HttpPostAgent.cs" />
-    <Compile Include="Api_Model\GetBusJourneysResponseModel.cs" />
-    <Compile Include="Api_Model\GetBusLocationsResponseModel.cs" />
-    <Compile Include="Api_Model\GetBusLocationsRequestModel.cs" />
-    <Compile Include="Api_Model\GetBusJourneysRequestModel.cs" />
-    <Compile Include="Api_Model\GetSessionResponseModel.cs" />
-    <Compile Include="Api_Model\GetSessionRequestModel.cs" />
+    <Compile Include="Model\obilet\GetBusJourneysResponseModel.cs" />
+    <Compile Include="Model\obilet\GetBusLocationsResponseModel.cs" />
+    <Compile Include="Model\obilet\GetBusLocationsRequestModel.cs" />
+    <Compile Include="Model\obilet\GetBusJourneysRequestModel.cs" />
+    <Compile Include="Model\obilet\GetSessionResponseModel.cs" />
+    <Compile Include="Model\obilet\GetSessionRequestModel.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\AuthController.cs" />
-    <Compile Include="Controllers\FileController.cs" />
-    <Compile Include="Controllers\JourneyController.cs" />
-    <Compile Include="Controllers\MainController.cs" />
-    <Compile Include="Controllers\SysController.cs" />
+    <Compile Include="Controllers\obilet\AuthController.cs" />
+    <Compile Include="Controllers\Site\FileController.cs" />
+    <Compile Include="Controllers\obilet\JourneyController.cs" />
+    <Compile Include="Controllers\Site\MainController.cs" />
+    <Compile Include="Controllers\Site\SysController.cs" />
     <Compile Include="Enum\ResponseStates.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Json\JsonBrowser.cs" />
-    <Compile Include="Json\JsonBusLocation.cs" />
-    <Compile Include="Json\JsonConnection.cs" />
-    <Compile Include="Json\JsonFeature.cs" />
-    <Compile Include="Json\JsonBusJourney.cs" />
-    <Compile Include="Json\JsonJourney.cs" />
-    <Compile Include="Json\JsonLocation.cs" />
-    <Compile Include="Json\JsonPolicy.cs" />
-    <Compile Include="Json\JsonSession.cs" />
-    <Compile Include="Json\JsonStop.cs" />
+    <Compile Include="Model\obilet\Json\JsonBrowser.cs" />
+    <Compile Include="Model\obilet\Json\JsonBusLocation.cs" />
+    <Compile Include="Model\obilet\Json\JsonConnection.cs" />
+    <Compile Include="Model\obilet\Json\JsonFeature.cs" />
+    <Compile Include="Model\obilet\Json\JsonBusJourney.cs" />
+    <Compile Include="Model\obilet\Json\JsonJourney.cs" />
+    <Compile Include="Model\obilet\Json\JsonLocation.cs" />
+    <Compile Include="Model\obilet\Json\JsonPolicy.cs" />
+    <Compile Include="Model\obilet\Json\JsonSession.cs" />
+    <Compile Include="Model\obilet\Json\JsonStop.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\Cache.cs" />
     <Compile Include="Repository\Config.cs" />
@@ -166,6 +166,8 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Controllers\Assignment\" />
+    <Folder Include="Controllers\Proxy\" />
     <Folder Include="Files\js\modules\journey\pages\" />
     <Folder Include="Files\js\modules\journey\ui\" />
     <Folder Include="Files\js\ui\" />

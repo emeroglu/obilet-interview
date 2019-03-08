@@ -1,4 +1,4 @@
-﻿namespace obilet.Abstract
+﻿namespace obilet.Model.obilet.Abstract
 {
     public class CoreRequestModel
     {

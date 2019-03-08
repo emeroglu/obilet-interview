@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace obilet.Json
+namespace obilet.Model.obilet.Abstract.Json
 {
     public class JsonBrowser
     {

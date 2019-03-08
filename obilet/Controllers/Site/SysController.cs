@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Web;
 using System.Web.Mvc;
 
-namespace obilet.Controllers
+namespace obilet.Controllers.Site
 {
     public class SysController : Controller
     {

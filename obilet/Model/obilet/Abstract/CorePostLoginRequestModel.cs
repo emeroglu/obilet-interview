@@ -1,8 +1,8 @@
 ﻿using Newtonsoft.Json;
-using obilet.Json;
+using obilet.Model.obilet.Abstract.Json;
 using System;
 
-namespace obilet.Abstract
+namespace obilet.Model.obilet.Abstract
 {
     public class CorePostLoginRequestModel<DataModelType> : CoreRequestModel
     {

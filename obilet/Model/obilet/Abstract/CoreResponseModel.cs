@@ -2,7 +2,7 @@
 using Newtonsoft.Json.Converters;
 using obilet.Enum;
 
-namespace obilet.Abstract
+namespace obilet.Model.obilet.Abstract
 {
     public class CoreResponseModel<DataModelType>
     {

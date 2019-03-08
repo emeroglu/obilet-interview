@@ -7,7 +7,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Script.Serialization;
 
-namespace obilet.Controllers
+namespace obilet.Controllers.Site
 {
     public class FileController: Controller
     {

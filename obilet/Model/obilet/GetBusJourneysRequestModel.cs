@@ -1,9 +1,8 @@
 ﻿using Newtonsoft.Json;
-using obilet.Abstract;
-using obilet.Json;
+using obilet.Model.obilet.Abstract;
 using System;
 
-namespace obilet.Api_Model
+namespace obilet.Model.obilet
 {
     public class GetBusJourneysRequestModel : CorePostLoginRequestModel<GetBusJourneysRequestDataModel>
     {

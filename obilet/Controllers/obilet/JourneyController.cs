@@ -1,13 +1,12 @@
 ﻿using Newtonsoft.Json;
 using obilet.Agents;
-using obilet.Api_Model;
-using obilet.Json;
+using obilet.Model.obilet;
 using obilet.Repository;
 using System.IO;
 using System.Text;
 using System.Web.Mvc;
 
-namespace obilet.Controllers
+namespace obilet.Controllers.obilet
 {
     public class JourneyController : Controller
     {

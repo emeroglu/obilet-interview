@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json.Converters;
 
-namespace obilet.Abstract
+namespace obilet.Model.obilet.Abstract
 {
     public class CoreDateTimeConverter : IsoDateTimeConverter
     {

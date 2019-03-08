@@ -1,6 +1,6 @@
-﻿using obilet.Abstract;
+﻿using obilet.Model.obilet.Abstract;
 
-namespace obilet.Api_Model
+namespace obilet.Model.obilet
 {
     public class GetBusLocationsRequestModel : CorePostLoginRequestModel<CoreDataModel>
     {        
