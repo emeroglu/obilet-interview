@@ -1,6 +1,4 @@
 ﻿using Newtonsoft.Json;
-using obilet.Model.Assignment.Abstract;
-using System;
 
 namespace obilet.Model.Assignment.Json
 {
