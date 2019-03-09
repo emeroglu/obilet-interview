@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using obilet.Repository;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
@@ -24,7 +25,7 @@ namespace obilet.Agents
             string body = JsonConvert.SerializeObject(Body);
 
             StringContent content = new StringContent(body);
-            content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+            content.Headers.ContentType = new MediaTypeHeaderValue(ContentTypes.Json);
 
             return await Agency.HttpClient.PostAsync(Url, content).Result.Content.ReadAsStringAsync();            
         }

@@ -124,9 +124,11 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\Assignment\JourneyController.cs" />
     <Compile Include="Controllers\Assignment\AuthController.cs" />
+    <Compile Include="Controllers\Proxy\ProxyController.cs" />
     <Compile Include="Model\Assignment\Abstract\CoreDataModel.cs" />
     <Compile Include="Model\Assignment\Abstract\CoreDateTimeConverter.cs" />
     <Compile Include="Model\Assignment\Abstract\CorePostLoginRequestModel.cs" />
@@ -193,7 +195,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Controllers\Proxy\" />
     <Folder Include="Files\js\modules\journey\pages\" />
     <Folder Include="Files\js\modules\journey\ui\" />
     <Folder Include="Files\js\ui\" />
