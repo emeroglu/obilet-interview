@@ -1,0 +1,252 @@
+{
+	"info": {
+		"_postman_id": "70e45b20-7949-491d-bf0a-8343cc0eec7d",
+		"name": "obilet Assignment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Proxy - /Client/GetSession",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic ZEdocGMybHpZV0p5WVc1a2JtVjNZbWx1",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n   \"type\":1,\n    \"connection\":{\n        \"ip-address\":\"145.214.41.21\", \"port\":\"5117\"\n    },\n    \"browser\":{\n        \"name\":\"Chrome\", \"version\":\"47.0.0.12\"\n    }\n}"
+				},
+				"url": {
+					"raw": "{{URL}}/Proxy/Redirect/Client/GetSession",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"Proxy",
+						"Redirect",
+						"Client",
+						"GetSession"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Proxy - /Location/GetBusLocations",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic ZEdocGMybHpZV0p5WVc1a2JtVjNZbWx1",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"device-session\":{\n        \"session-id\": \"PqtdftjloK3Kpka97+ILDzMa6D9740nggLiTzXiLlzA=\",\n        \"device-id\": \"PqtdftjloK3Kpka97+ILDzMa6D9740nggLiTzXiLlzA=\"\n\t},\n\t\"data\":null,\n    \"date\":\"2016-03-11T11:33:00\",\n    \"language\":\"tr-TR\"\n}"
+				},
+				"url": {
+					"raw": "{{URL}}/Proxy/Redirect/Location/GetBusLocations",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"Proxy",
+						"Redirect",
+						"Location",
+						"GetBusLocations"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Proxy - /Journey/GetBusJourneys",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic ZEdocGMybHpZV0p5WVc1a2JtVjNZbWx1",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"device-session\": {\n        \"session-id\": \"PqtdftjloK3Kpka97+ILDzMa6D9740nggLiTzXiLlzA=\",\n        \"device-id\": \"PqtdftjloK3Kpka97+ILDzMa6D9740nggLiTzXiLlzA=\"\n  },\n  \"data\": {\n    \"origin-id\": 349,\n    \"destination-id\": 356,\n    \"departure-date\": \"2019-03-27T00:00:00\"\n  },\n  \"date\": \"2019-02-28T10:34:00\",\n  \"language\": \"tr-TR\",\n}"
+				},
+				"url": {
+					"raw": "{{URL}}/Proxy/Redirect/Journey/GetBusJourneys",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"Proxy",
+						"Redirect",
+						"Journey",
+						"GetBusJourneys"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "obilet - /Client/GetSession",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{URL}}/obilet/Client/GetSession",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"obilet",
+						"Client",
+						"GetSession"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "obilet - /Location/GetBusLocations",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"device-session\": {\n\t\t\"session-id\": \"wWoHdzz3x6BfU87C1Zn/nQALKvyxPyRoUDMlCZQveHE=\",\n\t\t\"device-id\": \"6kfqj9vHJFZxDLzLHx8tbjU9COreBGLET7kntleBNqA=\"\n\t},\n\t\"data\": null,\n\t\"date\": \"2019-03-09T22:00:00\",\n\t\"language\": \"tr-TR\"\n}"
+				},
+				"url": {
+					"raw": "{{URL}}/obilet/Location/GetBusLocations",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"obilet",
+						"Location",
+						"GetBusLocations"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "obilet - /Journey/GetBusJourneys",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"device-session\": {\n\t\t\"session-id\": \"wWoHdzz3x6BfU87C1Zn/nQALKvyxPyRoUDMlCZQveHE=\",\n\t\t\"device-id\": \"6kfqj9vHJFZxDLzLHx8tbjU9COreBGLET7kntleBNqA=\"\n\t},\n\t\"data\": {\n\t\t\"origin-id\": 349,\n\t\t\"destination-id\": 365,\n\t\t\"departure-date\": \"2019-03-11T10:00:00\"\n\t},\n\t\"date\": \"2019-03-09T22:00:00\",\n\t\"language\": \"tr-TR\"\n}"
+				},
+				"url": {
+					"raw": "{{URL}}/obilet/Journey/GetBusJourneys",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"obilet",
+						"Journey",
+						"GetBusJourneys"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Assignment - /auth/new-session",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{URL}}/auth/new-session",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"auth",
+						"new-session"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Assignment - /journey/possible-locations",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"auth\": {\n\t\t\"sessionKey\": \"LeJyEtKQ8oL6z6GHDtxwn8Q/2orOHjR59z+zop4TxdA=\",\n\t\t\"deviceKey\": \"S2TyYRe+fwcZATyPSgZwh9XmS266Y2VEeWQ6S69kkdE=\"\n\t}\n}"
+				},
+				"url": {
+					"raw": "{{URL}}/journey/possible-locations",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"journey",
+						"possible-locations"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Assignment - /journey/journeys",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"auth\": {\n\t\t\"sessionKey\": \"LeJyEtKQ8oL6z6GHDtxwn8Q/2orOHjR59z+zop4TxdA=\",\n\t\t\"deviceKey\": \"S2TyYRe+fwcZATyPSgZwh9XmS266Y2VEeWQ6S69kkdE=\"\n\t},\n\t\"data\": {\n\t\t\"originId\": 349,\n\t\t\"destinationId\": 365,\n\t\t\"date\": \"2019-03-09 15:30:00\"\n\t}\n}"
+				},
+				"url": {
+					"raw": "{{URL}}/journey/journeys",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"journey",
+						"journeys"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
