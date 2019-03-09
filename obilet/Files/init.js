@@ -25,6 +25,18 @@ $fetch
         .addScript("/File/Script/" + version)
         .onFetch(function () {
 
+            $global.$api = new $api();            
+            $global.$css = new $css();
+            $global.$data = new $data();
+            $global.$http = new $http();
+            $global.$lexicon = new $lexicon();
+            $global.$module = new $module();
+            $global.$nav = new $nav();
+            $global.$path = new $path();
+            $global.$page = new $page();
+            $global.$theme = new $theme();
+            $global.$view = new $view();
+
             $fetch.module("Journey", function () {
 
                 alert();

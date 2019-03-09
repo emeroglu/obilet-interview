@@ -116,6 +116,14 @@
     <Content Include="Files\js\services\api.js" />
     <Content Include="Files\js\services\bcast.js" />
     <Content Include="Files\js\services\css.js" />
+    <Content Include="Files\js\services\page.js" />
+    <Content Include="Files\js\services\module.js" />
+    <Content Include="Files\js\services\lexicon.js" />
+    <Content Include="Files\js\services\theme.js" />
+    <Content Include="Files\js\services\path.js" />
+    <Content Include="Files\js\services\nav.js" />
+    <Content Include="Files\js\services\view.js" />
+    <Content Include="Files\js\services\data.js" />
     <Content Include="Files\js\services\http.js" />
     <Content Include="Files\js\tools\fetch.js" />
     <Content Include="Files\js\tools\js.js" />
