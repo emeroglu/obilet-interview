@@ -124,8 +124,8 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Configuration\RouteConfig.cs" />
+    <Compile Include="Configuration\WebApiConfig.cs" />
     <Compile Include="Controllers\Assignment\JourneyController.cs" />
     <Compile Include="Controllers\Assignment\AuthController.cs" />
     <Compile Include="Controllers\obilet\LocationController.cs" />
@@ -195,7 +195,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="Files\js\modules\journey\pages\" />
     <Folder Include="Files\js\modules\journey\ui\" />
     <Folder Include="Files\js\ui\" />

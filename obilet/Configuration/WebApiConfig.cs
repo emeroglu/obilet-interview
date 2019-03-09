@@ -1,6 +1,6 @@
 ﻿using System.Web.Http;
 
-namespace obilet
+namespace obilet.Configuration
 {
     public static class WebApiConfig
     {
