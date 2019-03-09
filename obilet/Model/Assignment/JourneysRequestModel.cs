@@ -18,7 +18,7 @@ namespace obilet.Model.Assignment
         public int DestinationID { get; set; }
 
         [JsonConverter(typeof(CoreDateTimeConverter))]
-        [JsonProperty(PropertyName = "departureDate")]
-        public DateTime DepartureDate { get; set; }
+        [JsonProperty(PropertyName = "date")]
+        public DateTime Date { get; set; }
     }
 }

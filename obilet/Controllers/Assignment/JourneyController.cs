@@ -79,7 +79,7 @@ namespace obilet.Controllers.Assignment
             getBusJourneysRequestModel.Data = new GetBusJourneysRequestDataModel();
             getBusJourneysRequestModel.Data.OriginID = journeysRequestModel.Data.OriginID;
             getBusJourneysRequestModel.Data.DestinationID = journeysRequestModel.Data.DestinationID;
-            getBusJourneysRequestModel.Data.DepartureDate = journeysRequestModel.Data.DepartureDate;
+            getBusJourneysRequestModel.Data.DepartureDate = journeysRequestModel.Data.Date;
 
             GetBusJourneysResponseModel getBusJourneysResponseModel = Get_Bus_Journeys_Implementation(getBusJourneysRequestModel);
 
@@ -90,8 +90,8 @@ namespace obilet.Controllers.Assignment
             {
                 journeysDataModel.Journeys.Add(new JsonJourney()
                 {
-                    Departure = busJourney.Journey.Departure,
-                    Arrival = busJourney.Journey.Arrival,
+                    DepartureTime = busJourney.Journey.Departure.ToString("HH:mm"),
+                    ArrivalTime = busJourney.Journey.Arrival.ToString("HH:mm"),
                     Origin = new JsonLocation()
                     {
                         ID = busJourney.OriginLocationID,                        
@@ -102,9 +102,7 @@ namespace obilet.Controllers.Assignment
                         ID = busJourney.DestinationLocationID,                        
                         Name = busJourney.DestinationLocation
                     },
-                    Currency = busJourney.Journey.Currency,
-                    OriginalPrice = busJourney.Journey.OriginalPrice,
-                    InternetPrice = busJourney.Journey.InternetPrice
+                    Price = busJourney.Journey.InternetPrice + " " + busJourney.Journey.Currency
                 });
             }
 
