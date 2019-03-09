@@ -128,6 +128,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\Assignment\JourneyController.cs" />
     <Compile Include="Controllers\Assignment\AuthController.cs" />
+    <Compile Include="Controllers\obilet\LocationController.cs" />
     <Compile Include="Controllers\Proxy\ProxyController.cs" />
     <Compile Include="Model\Assignment\Abstract\CoreDataModel.cs" />
     <Compile Include="Model\Assignment\Abstract\CoreDateTimeConverter.cs" />
@@ -157,7 +158,7 @@
     <Compile Include="Model\obilet\GetBusJourneysRequestModel.cs" />
     <Compile Include="Model\obilet\GetSessionResponseModel.cs" />
     <Compile Include="Model\obilet\GetSessionRequestModel.cs" />
-    <Compile Include="Controllers\obilet\AuthController.cs" />
+    <Compile Include="Controllers\obilet\ClientController.cs" />
     <Compile Include="Controllers\Site\FileController.cs" />
     <Compile Include="Controllers\obilet\JourneyController.cs" />
     <Compile Include="Controllers\Site\MainController.cs" />

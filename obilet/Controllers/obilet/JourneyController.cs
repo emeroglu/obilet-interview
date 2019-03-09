@@ -10,38 +10,12 @@ using System.Web.Http;
 namespace obilet.Controllers.obilet
 {
     public partial class obiletController : ApiController
-    {
-        [HttpPost]
-        [Route("obilet/Journey/GetBusLocations")]
-        public HttpResponseMessage Get_Bus_Locations()
-        {
-            HttpContent content = Request.Content;
-            string body = content.ReadAsStringAsync().Result;
-
-            GetBusLocationsRequestModel request = JsonConvert.DeserializeObject<GetBusLocationsRequestModel>(body);                        
-
-            GetBusLocationsResponseModel response = Get_Bus_Locations_Implementation(request);
-
-            HttpResponseMessage result = new HttpResponseMessage(HttpStatusCode.OK);
-            result.Content = new StringContent(response.ToString(), Encoding.UTF8, ContentTypes.Json);
-            return result;
-
-        }
-        protected GetBusLocationsResponseModel Get_Bus_Locations_Implementation(GetBusLocationsRequestModel request)
-        {
-            HttpPostAgent<GetBusLocationsRequestModel, GetBusLocationsResponseModel> agent = new HttpPostAgent<GetBusLocationsRequestModel, GetBusLocationsResponseModel>();
-            agent.Url = Config.Get_Bus_Locations;
-            agent.Body = request;
-
-            return agent.Send();
-        }
-
+    {        
         [HttpPost]
         [Route("obilet/Journey/GetBusJourneys")]
         public HttpResponseMessage Get_Bus_Journeys()
-        {
-            HttpContent content = Request.Content;
-            string body = content.ReadAsStringAsync().Result;
+        {            
+            string body = Request.Content.ReadAsStringAsync().Result;
 
             GetBusJourneysRequestModel request = JsonConvert.DeserializeObject<GetBusJourneysRequestModel>(body);            
             

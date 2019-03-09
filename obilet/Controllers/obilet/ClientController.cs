@@ -16,7 +16,7 @@ namespace obilet.Controllers.obilet
     public partial class obiletController : ApiController
     {
         [HttpPost]
-        [Route("obilet/Auth/GetSession")]
+        [Route("obilet/Client/GetSession")]
         public HttpResponseMessage GetSession()
         {            
             string result = Get_Session_Implementation().ToString();
