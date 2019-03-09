@@ -1,10 +1,9 @@
-﻿using obilet.App_Start;
-using obilet.Repository;
+﻿using obilet.Repository;
 using System;
 using System.Collections.Generic;
 using System.Net;
+using System.Web.Http;
 using System.Web.Mvc;
-using System.Web.Routing;
 
 namespace obilet
 {
@@ -13,8 +12,8 @@ namespace obilet
 
         protected void Application_Start(object sender, EventArgs e)
         {
-            AreaRegistration.RegisterAllAreas();
-            RouteConfig.RegisterRoutes(RouteTable.Routes);
+            AreaRegistration.RegisterAllAreas();            
+            GlobalConfiguration.Configure(WebApiConfig.Register);
 
             DateTime now = DateTime.Now;
 

@@ -52,6 +52,9 @@
     <Reference Include="System.Net.Http, Version=4.1.1.3, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Net.Http.4.3.4\lib\net46\System.Net.Http.dll</HintPath>
     </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security.Cryptography.Algorithms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.3.0\lib\net46\System.Security.Cryptography.Algorithms.dll</HintPath>
@@ -76,6 +79,12 @@
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
@@ -115,6 +124,24 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\Assignment\JourneyController.cs" />
+    <Compile Include="Controllers\Assignment\AuthController.cs" />
+    <Compile Include="Model\Assignment\Abstract\CoreDataModel.cs" />
+    <Compile Include="Model\Assignment\Abstract\CoreDateTimeConverter.cs" />
+    <Compile Include="Model\Assignment\Abstract\CorePostLoginRequestModel.cs" />
+    <Compile Include="Model\Assignment\Abstract\CoreRequestModel.cs" />
+    <Compile Include="Model\Assignment\Abstract\CoreResponseModel.cs" />
+    <Compile Include="Model\Assignment\Json\JsonAuth.cs" />
+    <Compile Include="Model\Assignment\Json\JsonJourney.cs" />
+    <Compile Include="Model\Assignment\Json\JsonLocation.cs" />
+    <Compile Include="Model\Assignment\Json\JsonMeta.cs" />
+    <Compile Include="Model\Assignment\JourneysRequestModel.cs" />
+    <Compile Include="Model\Assignment\LocationsRequestModel.cs" />
+    <Compile Include="Model\Assignment\JourneysResponseModel.cs" />
+    <Compile Include="Model\Assignment\LocationsResponseModel.cs" />
+    <Compile Include="Model\Assignment\NewSessionResponseModel.cs" />
+    <Compile Include="Model\Assignment\NewSessionRequestModel.cs" />
     <Compile Include="Model\obilet\Abstract\CoreDataModel.cs" />
     <Compile Include="Model\obilet\Abstract\CoreDateTimeConverter.cs" />
     <Compile Include="Model\obilet\Abstract\CorePostLoginRequestModel.cs" />
@@ -128,7 +155,6 @@
     <Compile Include="Model\obilet\GetBusJourneysRequestModel.cs" />
     <Compile Include="Model\obilet\GetSessionResponseModel.cs" />
     <Compile Include="Model\obilet\GetSessionRequestModel.cs" />
-    <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\obilet\AuthController.cs" />
     <Compile Include="Controllers\Site\FileController.cs" />
     <Compile Include="Controllers\obilet\JourneyController.cs" />
@@ -166,7 +192,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Controllers\Assignment\" />
+    <Folder Include="App_Data\" />
     <Folder Include="Controllers\Proxy\" />
     <Folder Include="Files\js\modules\journey\pages\" />
     <Folder Include="Files\js\modules\journey\ui\" />

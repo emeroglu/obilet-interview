@@ -2,56 +2,63 @@
 using obilet.Agents;
 using obilet.Model.obilet;
 using obilet.Repository;
-using System.IO;
+using System.Net;
+using System.Net.Http;
 using System.Text;
-using System.Web.Mvc;
+using System.Web.Http;
 
 namespace obilet.Controllers.obilet
 {
-    public class JourneyController : Controller
+    public partial class obiletController : ApiController
     {
         [HttpPost]
-        public void Get_Bus_Locations()
+        [Route("obilet/Journey/GetBusLocations")]
+        public HttpResponseMessage Get_Bus_Locations()
         {
-            StreamReader reader = new StreamReader(Request.InputStream, Encoding.UTF8);
-            string body = reader.ReadToEnd();
-            reader.Close();
+            HttpContent content = Request.Content;
+            string body = content.ReadAsStringAsync().Result;
 
-            GetBusLocationsRequestModel request = JsonConvert.DeserializeObject<GetBusLocationsRequestModel>(body);
+            GetBusLocationsRequestModel request = JsonConvert.DeserializeObject<GetBusLocationsRequestModel>(body);                        
 
-            new HttpPostAgent<GetBusLocationsRequestModel, GetBusLocationsResponseModel>()
-            {
-                Url = Config.Get_Bus_Locations,
-                Body = request,
-                OnSuccess = (response) =>
-                {
-                    Response.ContentType = ContentTypes.Json;
-                    Response.Write(response);
-                }
-            }
-            .Send();
+            GetBusLocationsResponseModel response = Get_Bus_Locations_Implementation(request);
+
+            HttpResponseMessage result = new HttpResponseMessage(HttpStatusCode.OK);
+            result.Content = new StringContent(response.ToString(), Encoding.UTF8, ContentTypes.Json);
+            return result;
+
+        }
+        protected GetBusLocationsResponseModel Get_Bus_Locations_Implementation(GetBusLocationsRequestModel request)
+        {
+            HttpPostAgent<GetBusLocationsRequestModel, GetBusLocationsResponseModel> agent = new HttpPostAgent<GetBusLocationsRequestModel, GetBusLocationsResponseModel>();
+            agent.Url = Config.Get_Bus_Locations;
+            agent.Body = request;
+
+            return agent.Send();
         }
 
         [HttpPost]
-        public void Get_Bus_Journeys()
+        [Route("obilet/Journey/GetBusJourneys")]
+        public HttpResponseMessage Get_Bus_Journeys()
         {
-            StreamReader reader = new StreamReader(Request.InputStream, Encoding.UTF8);
-            string body = reader.ReadToEnd();
-            reader.Close();
+            HttpContent content = Request.Content;
+            string body = content.ReadAsStringAsync().Result;
 
-            GetBusJourneysRequestModel request = JsonConvert.DeserializeObject<GetBusJourneysRequestModel>(body);
+            GetBusJourneysRequestModel request = JsonConvert.DeserializeObject<GetBusJourneysRequestModel>(body);            
+            
+            GetBusJourneysResponseModel response = Get_Bus_Journeys_Implementation(request);
 
-            new HttpPostAgent<GetBusJourneysRequestModel, GetBusJourneysResponseModel>()
-            {
-                Url = Config.Get_Bus_Journeys,
-                Body = request,
-                OnSuccess = (response) =>
-                {
-                    Response.ContentType = ContentTypes.Json;
-                    Response.Write(response);
-                }
-            }
-            .Send();
+            HttpResponseMessage result = new HttpResponseMessage(HttpStatusCode.OK);
+            result.Content = new StringContent(response.ToString(), Encoding.UTF8, ContentTypes.Json);
+            return result;
+
+        }
+        protected GetBusJourneysResponseModel Get_Bus_Journeys_Implementation(GetBusJourneysRequestModel request)
+        {
+            HttpPostAgent<GetBusJourneysRequestModel, GetBusJourneysResponseModel> agent = new HttpPostAgent<GetBusJourneysRequestModel, GetBusJourneysResponseModel>();
+            agent.Url = Config.Get_Bus_Journeys;
+            agent.Body = request;
+
+            return agent.Send();
         }
     }
 }

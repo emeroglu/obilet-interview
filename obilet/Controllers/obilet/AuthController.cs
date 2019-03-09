@@ -2,16 +2,36 @@
 using obilet.Model.obilet;
 using obilet.Model.obilet.Abstract.Json;
 using obilet.Repository;
-using System.Web.Mvc;
+using System.Collections;
+using System.Collections.Specialized;
+using System.Net;
+using System.Net.Http;
+using System.Text;
+using System.Web;
+using System.Web.Configuration;
+using System.Web.Http;
 
 namespace obilet.Controllers.obilet
 {
-    public class AuthController : Controller
+    public partial class obiletController : ApiController
     {
+        [HttpPost]
+        [Route("obilet/Auth/GetSession")]
+        public HttpResponseMessage GetSession()
+        {            
+            string result = Get_Session_Implementation().ToString();
 
-        [HttpGet]
-        public void Get_Session()
+            HttpResponseMessage response = new HttpResponseMessage(HttpStatusCode.OK);
+            response.Content = new StringContent(result, Encoding.UTF8, ContentTypes.Json);
+            return response;
+        }
+        protected GetSessionResponseModel Get_Session_Implementation()
         {
+            string useragent = HttpContext.Current.Request.UserAgent;
+            HttpBrowserCapabilities browser = new HttpBrowserCapabilities { Capabilities = new Hashtable { { string.Empty, useragent } } };
+            BrowserCapabilitiesFactory factory = new BrowserCapabilitiesFactory();
+            factory.ConfigureBrowserCapabilities(new NameValueCollection(), browser);
+
             GetSessionRequestModel request = new GetSessionRequestModel()
             {
                 Type = 1,
@@ -22,22 +42,16 @@ namespace obilet.Controllers.obilet
                 },
                 Browser = new JsonBrowser()
                 {
-                    Name = Request.Browser.Browser.ToString(),
-                    Version = Request.Browser.Version.ToString()
+                    Name = browser.Browser,
+                    Version = browser.Version
                 }
-            };            
+            };
 
-            new HttpPostAgent<GetSessionRequestModel, GetSessionResponseModel>()
-            {
-                Url = Config.Get_Session,
-                Body = request,
-                OnSuccess = (response) =>
-                {
-                    Response.ContentType = ContentTypes.Json;                    
-                    Response.Write(response);
-                }
-            }
-            .Send();       
+            HttpPostAgent<GetSessionRequestModel, GetSessionResponseModel> agent = new HttpPostAgent<GetSessionRequestModel, GetSessionResponseModel>();
+            agent.Url = Config.Get_Session;
+            agent.Body = request;            
+
+            return agent.Send();
         }
 
     }

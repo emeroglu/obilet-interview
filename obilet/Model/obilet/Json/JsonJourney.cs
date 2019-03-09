@@ -26,7 +26,7 @@ namespace obilet.Model.obilet.Abstract.Json
         public DateTime Departure { get; set; }
 
         [JsonConverter(typeof(CoreDateTimeConverter))]
-        [JsonProperty(PropertyName = "arrival", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty(PropertyName = "arrival")]
         public DateTime Arrival { get; set; }
 
         [JsonProperty(PropertyName = "currency")]
