@@ -40,8 +40,7 @@ namespace obilet.Controllers.Assignment
             {
                 locationsDataModel.Locations.Add(new JsonLocation()
                 {
-                    ID = busLocation.ID,
-                    ParentID = busLocation.ParentID,
+                    ID = busLocation.ID,                    
                     Name = busLocation.Name
                 });
             }
@@ -95,14 +94,12 @@ namespace obilet.Controllers.Assignment
                     Arrival = busJourney.Journey.Arrival,
                     Origin = new JsonLocation()
                     {
-                        ID = busJourney.OriginLocationID,
-                        ParentID = null,
+                        ID = busJourney.OriginLocationID,                        
                         Name = busJourney.OriginLocation
                     },
                     Destination = new JsonLocation()
                     {
-                        ID = busJourney.DestinationLocationID,
-                        ParentID = null,
+                        ID = busJourney.DestinationLocationID,                        
                         Name = busJourney.DestinationLocation
                     },
                     Currency = busJourney.Journey.Currency,
