@@ -12,6 +12,7 @@ namespace obilet.Controllers.Site
     public class FileController: Controller
     {
         [HttpGet]
+        [Route("File/Init")]
         public string Init()
         {
             string compilation = "";
@@ -68,16 +69,13 @@ namespace obilet.Controllers.Site
         }
 
         [HttpGet]
-        public string Style(string p1)
+        [Route("File/Style/{version}")]
+        public string Style(string version)
         {
             string styles = "";
 
-            if (Cache.Style != "")
-            {
-                styles = Cache.Style;
-            }
-            else
-            {
+            if (Cache.Style == "")
+            {              
                 List<string> listStyles = new List<string>();
                 
                 listStyles.Add("/Files/css/main.css");
@@ -99,9 +97,13 @@ namespace obilet.Controllers.Site
                     reader.Dispose();
                 }
 
-                styles = styles.Replace("{version}", p1);
+                styles = styles.Replace("{version}", version);
 
                 Cache.Style = styles;
+            }
+            else
+            {
+                styles = Cache.Style;
             }
 
             Response.ContentType = ContentTypes.Stylesheet;            
@@ -113,15 +115,12 @@ namespace obilet.Controllers.Site
         }
 
         [HttpGet]
-        public string Script(string p1)
+        [Route("File/Script/{version}")]
+        public string Script(string version)
         {
             string script = "";
 
-            if (Cache.Script != "")
-            {
-                script = Cache.Script;
-            }
-            else
+            if (Cache.Script == "")
             {
                 List<string> config;
 
@@ -155,6 +154,10 @@ namespace obilet.Controllers.Site
 
                 Cache.Script = script;
             }
+            else
+            {
+                script = Cache.Script;
+            }
 
             Response.ContentType = ContentTypes.Javascript;            
             Response.Cache.SetCacheability(HttpCacheability.Private);
@@ -165,10 +168,10 @@ namespace obilet.Controllers.Site
         }
 
         [HttpGet]
-        public string Module(string p1, string p2)
+        [Route("File/Module/{version}/{module}")]
+        public string Module(string version, string module)
         {
-            string script = "";
-            string module = p2.ToLower();
+            string script = "";            
 
             if (Cache.Modules.Keys.Contains(module))
             {
@@ -181,7 +184,7 @@ namespace obilet.Controllers.Site
                 FileStream stream;
                 StreamReader reader;
 
-                stream = new FileStream(Server.MapPath("/Files/js/modules/" + module + "/config.json"), FileMode.Open, FileAccess.Read);
+                stream = new FileStream(Server.MapPath("/Files/js/modules/" + module.ToLower() + "/config.json"), FileMode.Open, FileAccess.Read);
                 reader = new StreamReader(stream);
 
                 config = new JavaScriptSerializer().Deserialize<List<string>>(reader.ReadToEnd());

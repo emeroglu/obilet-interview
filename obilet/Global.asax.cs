@@ -27,6 +27,7 @@ namespace obilet
             Cache.Last_Alive = now;
             Cache.Last_Refresh = now;
 
+            Cache.Style = "";
             Cache.Script = "";
             Cache.Modules = new Dictionary<string, string>();
         }

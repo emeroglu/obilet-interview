@@ -9,24 +9,28 @@ namespace obilet.Controllers.Site
     public class SysController : Controller
     {
         [HttpGet]
+        [Route("Sys/Start")]
         public string Start()
         {
             return Cache.Start.ToString(Config.Date_Format);
         }
 
         [HttpGet]
+        [Route("Sys/Last_Alive")]
         public string Last_Alive()
         {
             return Cache.Last_Alive.ToString(Config.Date_Format);
         }
 
         [HttpGet]
+        [Route("Sys/Last_Refresh")]
         public string Last_Refresh()
         {
             return Cache.Last_Refresh.ToString(Config.Date_Format);
         }
 
         [HttpGet]
+        [Route("Sys/Keep_Alive")]
         public string Keep_Alive(int seconds)
         {
             Cache.Last_Alive = DateTime.Now;
@@ -55,6 +59,7 @@ namespace obilet.Controllers.Site
         }
 
         [HttpGet]
+        [Route("Sys/Refresh")]
         public string Refresh()
         {
             DateTime now = DateTime.Now;

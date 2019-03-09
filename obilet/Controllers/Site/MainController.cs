@@ -8,6 +8,7 @@ namespace obilet.Controllers.Site
     public class MainController : Controller
     {
         [HttpGet]
+        [Route("")]
         public string Index()
         {
             string html = "";

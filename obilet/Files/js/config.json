@@ -1,3 +1,18 @@
-﻿[    
+﻿[
+
+  "/Files/js/abstract/WebRequest.js",
+
+  "/Files/js/services/api.js",
+  "/Files/js/services/bcast.js",
+  "/Files/js/services/css.js",
+  "/Files/js/services/data.js",
+  "/Files/js/services/http.js",
+  "/Files/js/services/lexicon.js",
+  "/Files/js/services/module.js",
+  "/Files/js/services/nav.js",
+  "/Files/js/services/page.js",
+  "/Files/js/services/path.js",
+  "/Files/js/services/theme.js",
+  "/Files/js/services/view.js"    
 
 ]
