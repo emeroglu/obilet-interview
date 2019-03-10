@@ -1,5 +1,8 @@
 ﻿[
 
+  "/Files/js/abstract/Module.js",
+  "/Files/js/abstract/Page.js",
+  "/Files/js/abstract/View.js",
   "/Files/js/abstract/WebRequest.js",
 
   "/Files/js/services/api.js",
@@ -13,6 +16,6 @@
   "/Files/js/services/page.js",
   "/Files/js/services/path.js",
   "/Files/js/services/theme.js",
-  "/Files/js/services/view.js"    
+  "/Files/js/services/view.js"  
 
 ]

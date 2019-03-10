@@ -112,7 +112,13 @@
   <ItemGroup>
     <Content Include="Files\css\main.css" />
     <Content Include="Files\init.js" />
+    <Content Include="Files\js\abstract\Module.js" />
+    <Content Include="Files\js\abstract\Page.js" />
+    <Content Include="Files\js\abstract\View.js" />
     <Content Include="Files\js\abstract\WebRequest.js" />
+    <Content Include="Files\js\modules\journey\pages\location_selector.js" />
+    <Content Include="Files\js\modules\journey\pages\search_results.js" />
+    <Content Include="Files\js\modules\journey\pages\search.js" />
     <Content Include="Files\js\services\api.js" />
     <Content Include="Files\js\services\bcast.js" />
     <Content Include="Files\js\services\css.js" />
@@ -203,7 +209,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Files\js\modules\journey\pages\" />
     <Folder Include="Files\js\modules\journey\ui\" />
     <Folder Include="Files\js\ui\" />
   </ItemGroup>
