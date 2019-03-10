@@ -66,20 +66,35 @@ $fetch
             $global.$theme = new $theme();
             $global.$view = new $view();
 
-            $fetch.module("Journey", function () {                
+            $js.compile("UIModule", Module, function ($public, $private, $protected, $self) {
 
-                new JourneyModule()
-                    .begin()
-                    .onLoad(function () {
+                $protected.override.func.on_key = function () { return "ui"; };
 
-                        document.getElementsByTagName("script")[0].remove();
-
-                        $window.onresize();
-
-                    })
-                    .load();
+                $protected.override.func.on_types = function () { return [AbsoluteLayout, Button, RelativeLayout, TextView]; };                
 
             });
+
+            new UIModule()
+                .begin()
+                    .onBuild(function () {
+
+                        $fetch.module("Journey", function () {
+
+                            new JourneyModule()
+                                .begin()
+                                .onLoad(function () {
+
+                                    document.getElementsByTagName("script")[0].remove();
+
+                                    $window.onresize();
+
+                                })
+                                .load();
+
+                        });
+
+                    })
+                .build();                        
 
         })
     .start();

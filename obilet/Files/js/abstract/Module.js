@@ -15,12 +15,16 @@
 
     $public.delegate.begin = function () { $self.parent = null; return $self; };
 
+    $private.void.on_build = function () { };
+    $public.delegate.onBuild = function ($delegate) { $self.on_build = $delegate; return $self; };
+
     $private.void.on_load = function () { };
     $public.delegate.onLoad = function ($delegate) { $self.on_load = $delegate; return $self; };
 
     $private.field.key = "";
     $protected.virtual.func.on_key = function () { return ""; };
 
+    $protected.virtual.func.on_types = function () { return []; };
     $protected.virtual.void.on_construct = function (_pages, _views) { };
     $protected.virtual.void.on_ready = function (_pages, _views, $ready) { $ready(); };
 
@@ -68,7 +72,7 @@
 
     $private.void.view_styling = function ($) {
 
-        $view.sneaky_load();
+        $view.sneaky_load($self.on_types());
 
     };
 
@@ -144,6 +148,22 @@
     };
 
     // Load
+
+    $public.void.build = function () {
+
+        $view.module = $self;        
+
+        $self.key = $self.on_key();
+        $self.tag = "o-" + $self.key + "-module";                        
+
+        $self.generate_style_element($self.tag);
+
+        $css.target = $self.tag;        
+        $self.view_styling();
+
+        $self.on_build();
+
+    };
 
     $public.void.load = function () {
 

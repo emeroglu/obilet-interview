@@ -46,7 +46,7 @@
 
     };
 
-    $protected.override.void.on_style = function (_views) {        
+    $protected.override.void.on_style = function (_views) {               
 
         _views.bar.select()
             .begin()
@@ -64,25 +64,29 @@
         _views.route.select()
             .begin()
                 .widthFull()
-                .height(158)                
+                .height(158) 
+                .backgroundColor($theme.color.grayLight)
             .save();
 
         _views.date.select()
             .begin()
                 .widthFull()
                 .height(92)
+                .backgroundColor($theme.color.grayLight)
             .save();
 
         _views.submit.select()
             .begin()
                 .widthFull()
                 .height(85)
+                .backgroundColor($theme.color.grayLight)
             .save();
 
         _views.rest.select()
             .begin()
                 .widthFull()
-                .heightCropFromFull(40 + 158 + 92 + 85)                
+                .heightCropFromFull(40 + 158 + 92 + 85)   
+                .backgroundColor($theme.color.white)
             .save(); 
 
         _views.rest.views.inset.select()

@@ -80,17 +80,17 @@
     $protected.virtual.void.on_tablet_viewport = function (_views) { };
     $protected.virtual.void.on_mobile_viewport = function (_views) { };
 
-    $public.func.select = function (_selection) { return $css.select($self.selector("self")); };
-    $public.func.select_tag = function (_selection) { return $css.select($self.selector("tag")); };
-    $public.func.select_tag_viewport = function (_selection) { return $css.select($self.selector("tag_viewport")); };
-    $public.func.select_viewport = function (_selection) { return $css.select($self.selector("self_viewport")); };
-    $public.func.select_path = function (_selection) { return $css.select($self.selector("path")); };
-    $public.func.select_path_viewport = function (_selection) { return $css.select($self.selector("path_viewport")); };
+    $public.func.select = function () { return $css.select($self.selector("self")); };        
+    $public.func.select_tag = function () { return $css.select($self.selector("tag")); };
+    $public.func.select_tag_viewport = function () { return $css.select($self.selector("tag_viewport")); };
+    $public.func.select_viewport = function () { return $css.select($self.selector("self_viewport")); };
+    $public.func.select_path = function () { return $css.select($self.selector("path")); };
+    $public.func.select_path_viewport = function () { return $css.select($self.selector("path_viewport")); };
 
-    $public.func.selector = function (_selection) {
+    $public.func.selector = function (_selection, _index) {
 
         if (_selection == "tag")
-            return $self.tag;
+            return $self.tag;                        
         else if (_selection == "tag_viewport")
             return $self.tag + "[o-viewport='" + $view.port + "']";
         else if (_selection == "self")

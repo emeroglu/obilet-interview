@@ -7,14 +7,7 @@
     $public.field.page = {};
 
     $private.field.index = 0;
-    $private.field.types = [
-
-        AbsoluteLayout,
-        Button,
-        RelativeLayout,
-        TextView
-
-    ];
+    $private.field.types = [];
     $private.field.loadeds = [];
     $private.void.recurse = function () {
 
@@ -48,9 +41,9 @@
 
     };
 
-    $public.void.sneaky_load = function (_purpose) {
-
-        $self.loadeds = [];
+    $public.void.sneaky_load = function (_types) {        
+        
+        $self.types = _types;                
 
         $self.index = -1;
         $self.recurse();
