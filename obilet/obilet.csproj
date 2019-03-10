@@ -116,14 +116,14 @@
     <Content Include="Files\js\abstract\Page.js" />
     <Content Include="Files\js\abstract\View.js" />
     <Content Include="Files\js\abstract\WebRequest.js" />
-    <Content Include="Files\js\modules\journey\pages\location_selector.js" />
-    <Content Include="Files\js\modules\journey\pages\search_results.js" />
-    <Content Include="Files\js\modules\journey\pages\search.js" />
+    <Content Include="Files\js\modules\journey\pages\LocationSelector.js" />
+    <Content Include="Files\js\modules\journey\pages\SearchResults.js" />
+    <Content Include="Files\js\modules\journey\pages\Search.js" />
+    <Content Include="Files\js\modules\journey\ui\DateInput.js" />
+    <Content Include="Files\js\modules\journey\ui\RouteInput.js" />
     <Content Include="Files\js\services\api.js" />
     <Content Include="Files\js\services\bcast.js" />
     <Content Include="Files\js\services\css.js" />
-    <Content Include="Files\js\services\page.js" />
-    <Content Include="Files\js\services\module.js" />
     <Content Include="Files\js\services\lexicon.js" />
     <Content Include="Files\js\services\theme.js" />
     <Content Include="Files\js\services\path.js" />
@@ -134,6 +134,10 @@
     <Content Include="Files\js\tools\fetch.js" />
     <Content Include="Files\js\tools\js.js" />
     <Content Include="Files\js\modules\journey\module.js" />
+    <Content Include="Files\js\ui\RelativeLayout.js" />
+    <Content Include="Files\js\ui\AbsoluteLayout.js" />
+    <Content Include="Files\js\ui\Button.js" />
+    <Content Include="Files\js\ui\TextView.js" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -208,10 +212,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Files\js\modules\journey\ui\" />
-    <Folder Include="Files\js\ui\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

@@ -60,11 +60,9 @@ $fetch
             $global.$css = new $css();
             $global.$data = new $data();
             $global.$http = new $http();
-            $global.$lexicon = new $lexicon();
-            $global.$module = new $module();
+            $global.$lexicon = new $lexicon();            
             $global.$nav = new $nav();
-            $global.$path = new $path();
-            $global.$page = new $page();
+            $global.$path = new $path();            
             $global.$theme = new $theme();
             $global.$view = new $view();
 

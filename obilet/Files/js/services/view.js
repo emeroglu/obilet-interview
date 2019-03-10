@@ -8,7 +8,12 @@
 
     $private.field.index = 0;
     $private.field.types = [
-        
+
+        AbsoluteLayout,
+        Button,
+        RelativeLayout,
+        TextView
+
     ];
     $private.field.loadeds = [];
     $private.void.recurse = function () {

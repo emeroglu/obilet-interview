@@ -11,11 +11,14 @@
   "/Files/js/services/data.js",
   "/Files/js/services/http.js",
   "/Files/js/services/lexicon.js",
-  "/Files/js/services/module.js",
   "/Files/js/services/nav.js",
-  "/Files/js/services/page.js",
   "/Files/js/services/path.js",
   "/Files/js/services/theme.js",
-  "/Files/js/services/view.js"  
+  "/Files/js/services/view.js",
+
+  "/Files/js/ui/AbsoluteLayout.js",
+  "/Files/js/ui/Button.js",
+  "/Files/js/ui/RelativeLayout.js",
+  "/Files/js/ui/TextView.js"
 
 ]

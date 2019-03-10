@@ -15,7 +15,7 @@
             },
             state: function (s) {
                 this.json = {};
-                this.clss = "..o-" + s;
+                this.clss = ".o-" + s;
                 return $css.builder(this);
             }
         };
@@ -516,19 +516,19 @@
                 return this;
             },
             backgroundColor: function (c) {
-                o.json["backgroun.o-color"] = c;
+                o.json["background-color"] = c;
                 return this;
             },
             backgroundCover: function () {
-                o.json["backgroun.o-size"] = "cover";
+                o.json["background-size"] = "cover";
                 return this;
             },
             backgroundImage: function (u) {
-                o.json["backgroun.o-image"] = "url('" + u + "')";
+                o.json["background-image"] = "url('" + u + "')";
                 return this;
             },
             backgroundFixed: function () {
-                o.json["backgroun.o-attachment"] = "fixed";
+                o.json["background-attachment"] = "fixed";
                 return this;
             },
             background: function (b) {
