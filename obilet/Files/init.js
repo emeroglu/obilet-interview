@@ -82,13 +82,13 @@ $fetch
 
                             new JourneyModule()
                                 .begin()
-                                .onLoad(function () {
+                                    .onLoad(function () {
 
-                                    document.getElementsByTagName("script")[0].remove();
+                                        document.getElementsByTagName("script")[0].remove();
 
-                                    $window.onresize();
+                                        $window.onresize();
 
-                                })
+                                    })
                                 .load();
 
                         });

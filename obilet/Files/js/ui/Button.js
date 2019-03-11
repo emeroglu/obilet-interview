@@ -3,6 +3,9 @@
     $private.field.text = "";
     $public.void.set_text = function (_text) { $self.text = _text; };    
 
+    $private.void.on_click = function () { };
+    $public.delegate.onClick = function ($delegate) { $self.on_click = $delegate; return $self; };
+
     $public.override.void.apply = function () {
 
         $self.element.innerHTML = $self.text;      
@@ -15,6 +18,9 @@
 
         let e = document.createElement($self.tag);
         e.innerHTML = $self.text;
+
+        e.onclick = $self.on_click;
+
         return e;
 
     };

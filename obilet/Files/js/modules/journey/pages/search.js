@@ -28,6 +28,9 @@
         _views.date.views.input = new DateInput();
 
         _views.submit.views.button = new Button();
+        _views.submit.views.button.onClick(function () {
+            $nav.to("search_results", "right", "center", "center", "left");            
+        });
 
         _views.rest.views.inset.views.text = new TextView();
 

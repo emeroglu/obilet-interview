@@ -90,12 +90,19 @@
             .save()
             .state("initial")
                 .opacity(1)
+                .translateXPercent(0)
             .save()
-            .state("show")
+            .state("center")
                 .opacity(1)
+                .translateXPercent(0)
             .save()
-            .state("hide")
+            .state("left")
                 .opacity(0)
+                .translateXPercent(-100)
+            .save()
+            .state("right")
+                .opacity(0)
+                .translateXPercent(100)
             .save();
 
     };
@@ -132,7 +139,7 @@
 
     // Load
 
-    $public.void.load = function () {
+    $public.void.load = function () {        
 
         $view.page = $self;
 
@@ -168,11 +175,45 @@
 
     };
 
-    $public.void.show = function ($on_show) {
+    $public.void.show = function (_from, _to, $on_show) {
 
-        $self.element.className = "o-disp o-show";
+        $view.page = $self;
 
-        $on_show();
+        $self.element.className = "o-ease-500 o-disp o-" + _from;
+
+        setTimeout(function () {
+
+            $self.element.className = "o-ease-500 o-disp o-" + _to;
+
+            setTimeout(function () {
+
+                $self.element.className = "o-disp o-" + _to;
+
+                $on_show();
+
+            }, 550);
+
+        }, 50);        
+
+    };
+
+    $public.void.hide = function (_from, _to, $on_hide) {
+
+        $self.element.className = "o-ease-500 o-disp o-" + _from;
+
+        setTimeout(function () {
+
+            $self.element.className = "o-ease-500 o-disp o-" + _to;
+
+            setTimeout(function () {
+
+                $self.element.className = "o-none o-" + _to;
+
+                $on_hide();
+
+            }, 550);
+
+        }, 50);
 
     };
 

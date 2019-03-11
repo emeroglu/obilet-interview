@@ -188,7 +188,7 @@
         $self.index = -1;
         $self.on_recurse_end = function () {
 
-            $self.initial_page.show(function () {
+            $self.initial_page.show("center", "center", function () {
 
                 $self.loaded = true;
 
