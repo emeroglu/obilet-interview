@@ -199,6 +199,7 @@
         $self.tag = "o-" + $self.key;
 
         $self.element = $self.on_compile();
+        $self.element.onclick = $self.on_click;
 
         $self.on_construct($self.views);
         $self.on_flourish($self.views);
@@ -212,7 +213,7 @@
         if ($self.name != "") {
             $self.element.setAttribute("o-name", $self.name);
             $view[$self.name] = $self;
-        }
+        }        
 
         $self.index = -1;
         $self.on_recurse_end = function () {

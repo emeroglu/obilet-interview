@@ -6,6 +6,7 @@
 
     $protected.override.void.on_construct = function (_pages, _views) {
 
+        _pages.location_selector = new LocationSelectorPage();
         _pages.search = new SearchPage();
         _pages.search_results = new SearchResultsPage();
 

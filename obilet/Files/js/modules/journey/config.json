@@ -2,6 +2,7 @@
 
   "/Files/js/modules/journey/module.js",
 
+  "/Files/js/modules/journey/pages/LocationSelector.js",
   "/Files/js/modules/journey/pages/Search.js",
   "/Files/js/modules/journey/pages/SearchResults.js",
 

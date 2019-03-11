@@ -100,6 +100,18 @@
 
     };
 
+    $protected.extension.void.on_feed = function (_views) {
+
+        _views.origin.onClick(function () {
+            $nav.to("location_selector", "right", "center", "center", "left");
+        });
+
+        _views.destination.onClick(function () {
+            $nav.to("location_selector", "right", "center", "center", "left");
+        });
+
+    };
+
     $protected.extension.void.on_style = function (_views) {
 
         $self.select_tag()
@@ -219,7 +231,7 @@
         _views.swap.select_path()
             .begin()
                 .side(12)
-                .bottom(66 - 6)
+                .bottom(61)
                 .right(36)                
             .save();
 

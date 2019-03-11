@@ -3,10 +3,7 @@
     $private.field.img = null;
 
     $private.field.src = "";
-    $public.void.set_src = function (_src) { $self.src = _src; };
-
-    $private.void.on_tap = function () { };
-    $public.delegate.onTap = function ($delegate) { $self.on_tap = $delegate; return $self; };
+    $public.void.set_src = function (_src) { $self.src = _src; };    
 
     $public.override.void.apply = function () {
 
@@ -20,9 +17,7 @@
 
         let e = document.createElement($self.tag);
 
-        $self.img = document.createElement("img");
-
-        e.onclick = $self.on_tap;
+        $self.img = document.createElement("img");        
 
         e.appendChild($self.img);
 

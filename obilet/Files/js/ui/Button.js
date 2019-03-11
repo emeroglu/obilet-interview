@@ -1,10 +1,7 @@
 ﻿$js.compile("Button", View, function ($public, $private, $protected, $self) {
 
     $private.field.text = "";
-    $public.void.set_text = function (_text) { $self.text = _text; };    
-
-    $private.void.on_click = function () { };
-    $public.delegate.onClick = function ($delegate) { $self.on_click = $delegate; return $self; };
+    $public.void.set_text = function (_text) { $self.text = _text; };        
 
     $public.override.void.apply = function () {
 

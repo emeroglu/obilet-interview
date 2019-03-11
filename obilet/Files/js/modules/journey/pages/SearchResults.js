@@ -32,7 +32,7 @@
     $protected.override.void.on_feed = function (_views) {
 
         _views.back.views.icon.set_src($path.ic_left_arrow);
-        _views.back.views.icon.onTap(function () {
+        _views.back.views.icon.onClick(function () {
             $nav.to("search", "left", "center", "center", "right");
         });
 
