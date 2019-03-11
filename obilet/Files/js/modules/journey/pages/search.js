@@ -28,17 +28,17 @@
         _views.date.views.input = new DateInput();
 
         _views.submit.views.button = new Button();
-        _views.submit.views.button.onClick(function () {
-            $nav.to("search_results", "right", "center", "center", "left");            
-        });
-
+        
         _views.rest.views.inset.views.text = new TextView();
 
     };
 
     $protected.override.void.on_feed = function (_views) {
 
-        _views.submit.views.button.set_text("Bileti Bul");        
+        _views.submit.views.button.set_text("Bileti Bul");
+        _views.submit.views.button.onClick(function () {
+            $nav.to("search_results", "right", "center", "center", "left");
+        });
 
         _views.rest.views.inset.views.text.set_family("roboto");
         _views.rest.views.inset.views.text.set_align("left");

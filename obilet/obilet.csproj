@@ -115,6 +115,7 @@
     <Content Include="Files\img\ic_destination.png" />
     <Content Include="Files\img\ic_left_arrow.png" />
     <Content Include="Files\img\ic_origin.png" />
+    <Content Include="Files\img\ic_right_arrow.png" />
     <Content Include="Files\img\ic_swap.png" />
     <Content Include="Files\init.js" />
     <Content Include="Files\js\abstract\Module.js" />
@@ -126,6 +127,7 @@
     <Content Include="Files\js\modules\journey\pages\Search.js" />
     <Content Include="Files\js\modules\journey\ui\DateInput.js" />
     <Content Include="Files\js\modules\journey\ui\RouteInput.js" />
+    <Content Include="Files\js\modules\journey\ui\SearchResultItem.js" />
     <Content Include="Files\js\services\api.js" />
     <Content Include="Files\js\services\bcast.js" />
     <Content Include="Files\js\services\css.js" />
@@ -140,6 +142,7 @@
     <Content Include="Files\js\tools\js.js" />
     <Content Include="Files\js\modules\journey\module.js" />
     <Content Include="Files\js\ui\ImageView.js" />
+    <Content Include="Files\js\ui\ListView.js" />
     <Content Include="Files\js\ui\RelativeLayout.js" />
     <Content Include="Files\js\ui\AbsoluteLayout.js" />
     <Content Include="Files\js\ui\Button.js" />

@@ -107,6 +107,11 @@
                 .textWeight(500)
             .save();
 
+        $css.select($self.tag + "[o-size='tiny']")
+            .begin()
+                .textSize(9)
+            .save();
+
         $css.select($self.tag + "[o-size='smallest']")
             .begin()
                 .textSize(12)
@@ -150,6 +155,21 @@
         $css.select($self.tag + "[o-color='blue']")
             .begin()
                 .textColor($theme.color.blue)
+            .save();
+
+        $css.select($self.tag + "[o-color='blueDark']")
+            .begin()
+                .textColor($theme.color.blueDark)
+            .save();
+
+        $css.select($self.tag + "[o-color='blueDarker']")
+            .begin()
+                .textColor($theme.color.blueDarker)
+            .save();
+
+        $css.select($self.tag + "[o-color='blueDarkest']")
+            .begin()
+                .textColor($theme.color.blueDarkest)
             .save();
 
         $css.select($self.tag + "[o-color='black']")

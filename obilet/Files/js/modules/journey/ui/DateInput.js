@@ -33,19 +33,32 @@
 
         _views.date.views.left.views.bottom.views.icon = new ImageView();
         _views.date.views.left.views.bottom.views.icon.set_name("date_icon");
-        _views.date.views.left.views.bottom.views.icon.set_src($path.ic_calendar);
-               
+                       
         _views.date.views.right.views.top.views.header = new TextView();
         _views.date.views.right.views.top.views.header.set_name("date_header");
+                       
+        _views.date.views.right.views.bottom.views.text = new TextView();
+        _views.date.views.right.views.bottom.views.text.set_name("date_text");
+        
+        _views.today.views.text = new TextView();
+        _views.today.views.text.set_name("today_text");
+        
+        _views.tomorrow.views.text = new TextView();
+        _views.tomorrow.views.text.set_name("tomorrow_text");
+        
+    };
+
+    $protected.override.void.on_feed = function (_views) {
+
+        _views.date.views.left.views.bottom.views.icon.set_src($path.ic_calendar);
+
         _views.date.views.right.views.top.views.header.set_text("Tarih");
         _views.date.views.right.views.top.views.header.set_family("roboto");
         _views.date.views.right.views.top.views.header.set_align("left");
         _views.date.views.right.views.top.views.header.set_weight("medium");
         _views.date.views.right.views.top.views.header.set_size("smaller");
         _views.date.views.right.views.top.views.header.set_color("blue");
-               
-        _views.date.views.right.views.bottom.views.text = new TextView();
-        _views.date.views.right.views.bottom.views.text.set_name("date_text");
+
         _views.date.views.right.views.bottom.views.text.set_text("1 Nisan 2019 Pazar");
         _views.date.views.right.views.bottom.views.text.set_family("roboto");
         _views.date.views.right.views.bottom.views.text.set_align("left");
@@ -53,8 +66,6 @@
         _views.date.views.right.views.bottom.views.text.set_size("small");
         _views.date.views.right.views.bottom.views.text.set_color("gray"); 
 
-        _views.today.views.text = new TextView();
-        _views.today.views.text.set_name("today_text");
         _views.today.views.text.set_text("Bugün");
         _views.today.views.text.set_family("roboto");
         _views.today.views.text.set_align("center");
@@ -62,8 +73,6 @@
         _views.today.views.text.set_size("smallest");
         _views.today.views.text.set_color("white");
 
-        _views.tomorrow.views.text = new TextView();
-        _views.tomorrow.views.text.set_name("tomorrow_text");
         _views.tomorrow.views.text.set_text("Yarın");
         _views.tomorrow.views.text.set_family("roboto");
         _views.tomorrow.views.text.set_align("center");
@@ -107,7 +116,7 @@
             .begin()
                 .widthCentered(14)
                 .height(14)
-                .bottom(15)
+                .bottom(22)
                 .opacity(0.25)
             .save();
 
