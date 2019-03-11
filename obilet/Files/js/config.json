@@ -18,6 +18,7 @@
 
   "/Files/js/ui/AbsoluteLayout.js",
   "/Files/js/ui/Button.js",
+  "/Files/js/ui/ImageView.js",
   "/Files/js/ui/RelativeLayout.js",
   "/Files/js/ui/TextView.js"
 

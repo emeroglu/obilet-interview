@@ -70,7 +70,7 @@ $fetch
 
                 $protected.override.func.on_key = function () { return "ui"; };
 
-                $protected.override.func.on_types = function () { return [AbsoluteLayout, Button, RelativeLayout, TextView]; };                
+                $protected.override.func.on_types = function () { return [AbsoluteLayout, Button, ImageView, RelativeLayout, TextView]; };                
 
             });
 

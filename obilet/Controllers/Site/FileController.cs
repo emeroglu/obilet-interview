@@ -1,6 +1,7 @@
 ﻿using obilet.Repository;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Web;
@@ -11,6 +12,8 @@ namespace obilet.Controllers.Site
 {
     public class FileController: Controller
     {
+        private CultureInfo culture = new CultureInfo("en-US");
+
         [HttpGet]
         [Route("File/Init")]
         public string Init()
@@ -218,6 +221,45 @@ namespace obilet.Controllers.Site
             Response.Cache.SetRevalidation(HttpCacheRevalidation.None);
 
             return script;
+        }
+
+        [HttpGet]
+        [Route("File/Image/{version}/{id}")]
+        public ActionResult Image(string version, string id)
+        {
+            FileContentResult image;
+
+            if (Cache.Images.Keys.Contains(id))
+            {
+                image = Cache.Images[id];
+            }
+            else
+            {
+                List<string> listPaths = new List<string>();
+
+                listPaths.AddRange(Directory.GetFiles(Server.MapPath("/Files/img")).ToList());                
+
+                string path = listPaths.FirstOrDefault(p => p.Split('\\').Last().Split('.')[0] == id.ToLower(culture));
+
+                if (path == null) return null;
+
+                string extension = path.Split('\\').Last().Split('.').Last();
+
+                byte[] bytes = System.IO.File.ReadAllBytes(path);
+
+                string contentType = "image/" + ((extension == "png" || extension == "gif") ? extension : "jpeg");
+
+                image = File(bytes, contentType);
+
+                Cache.Images[id] = image;
+            }
+
+            Response.ContentType = image.ContentType;            
+            Response.Cache.SetCacheability(HttpCacheability.Private);
+            Response.Cache.SetMaxAge(TimeSpan.FromSeconds(31568000));
+            Response.Cache.SetRevalidation(HttpCacheRevalidation.None);
+
+            return image;
         }
 
     }

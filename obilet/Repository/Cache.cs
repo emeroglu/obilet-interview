@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Web.Mvc;
 
 namespace obilet.Repository
 {
@@ -11,6 +12,8 @@ namespace obilet.Repository
 
         public static string Style;
         public static string Script;
-        public static Dictionary<string, string> Modules;
+        public static Dictionary<string, FileContentResult> Images;
+
+        public static Dictionary<string, string> Modules;        
     }
 }

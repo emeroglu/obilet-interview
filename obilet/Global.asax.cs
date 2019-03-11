@@ -29,6 +29,8 @@ namespace obilet
 
             Cache.Style = "";
             Cache.Script = "";
+            Cache.Images = new Dictionary<string, FileContentResult>();
+
             Cache.Modules = new Dictionary<string, string>();
         }
 
