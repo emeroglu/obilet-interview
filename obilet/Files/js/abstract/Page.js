@@ -151,6 +151,8 @@
         $self.element = document.createElement($self.tag);
         $self.module.container.appendChild($self.element);
 
+        $self.element.className = "o-none o-initial";
+
         $self.on_construct($self.views);
         $self.on_flourish($self.views);
         $self.on_feed($self.views);
@@ -162,9 +164,7 @@
         $self.index = -1;
         $self.on_recurse_end = function () {
 
-            $self.on_style($self.views);
-
-            $self.element.className = "o-none o-initial";
+            $self.on_style($self.views);            
 
             $self.on_ready($self.views, $self.on_load);
 

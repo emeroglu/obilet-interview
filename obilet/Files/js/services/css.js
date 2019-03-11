@@ -535,8 +535,8 @@
                 o.json.background = b;
                 return this;
             },
-            textFamily: function () {
-                o.json["font-family"] = "'Exo 2', sans-serif";
+            textFamily: function (f) {
+                o.json["font-family"] = "'" + f + "', sans-serif";
                 return this;
             },
             textColorWhite: function () {

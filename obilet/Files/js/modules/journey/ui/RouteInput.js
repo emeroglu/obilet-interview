@@ -57,6 +57,7 @@
         _views.origin.views.right.views.top.views.header = new TextView();
         _views.origin.views.right.views.top.views.header.set_name("origin_header");
         _views.origin.views.right.views.top.views.header.set_text("Nereden");
+        _views.origin.views.right.views.top.views.header.set_family("roboto");
         _views.origin.views.right.views.top.views.header.set_align("left");
         _views.origin.views.right.views.top.views.header.set_weight("medium");
         _views.origin.views.right.views.top.views.header.set_size("smaller");
@@ -65,6 +66,7 @@
         _views.origin.views.right.views.bottom.views.text = new TextView();
         _views.origin.views.right.views.bottom.views.text.set_name("origin_text");
         _views.origin.views.right.views.bottom.views.text.set_text("İstanbul Avrupa");
+        _views.origin.views.right.views.bottom.views.text.set_family("roboto");
         _views.origin.views.right.views.bottom.views.text.set_align("left");
         _views.origin.views.right.views.bottom.views.text.set_weight("regular");
         _views.origin.views.right.views.bottom.views.text.set_size("small");
@@ -77,6 +79,7 @@
         _views.destination.views.right.views.top.views.header = new TextView();
         _views.destination.views.right.views.top.views.header.set_name("destination_header");
         _views.destination.views.right.views.top.views.header.set_text("Nereye");
+        _views.destination.views.right.views.top.views.header.set_family("roboto");
         _views.destination.views.right.views.top.views.header.set_align("left");
         _views.destination.views.right.views.top.views.header.set_weight("medium");
         _views.destination.views.right.views.top.views.header.set_size("smaller");
@@ -85,6 +88,7 @@
         _views.destination.views.right.views.bottom.views.text = new TextView();
         _views.destination.views.right.views.bottom.views.text.set_name("destination_text");
         _views.destination.views.right.views.bottom.views.text.set_text("Ankara");
+        _views.destination.views.right.views.bottom.views.text.set_family("roboto");
         _views.destination.views.right.views.bottom.views.text.set_align("left");
         _views.destination.views.right.views.bottom.views.text.set_weight("regular");
         _views.destination.views.right.views.bottom.views.text.set_size("small");

@@ -18,6 +18,7 @@ namespace obilet.Controllers.Site
             html += "       <meta charset='UTF-8' />";
             html += "       <meta name='viewport' content='width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, users-scalable=0'>";
             html += "       <link href='https://fonts.googleapis.com/css?family=Roboto:400,500' rel='stylesheet'>";
+            html += "       <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet'>";
             html += "   </head>";
             html += "   <body>";
             html += "       <script type='text/javascript' src='/File/Init'></script>";

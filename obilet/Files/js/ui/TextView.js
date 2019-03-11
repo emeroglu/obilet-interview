@@ -3,6 +3,9 @@
     $private.field.text = "";
     $public.void.set_text = function (_text) { $self.text = _text; };
 
+    $private.field.family = "roboto";
+    $public.void.set_family = function (_family) { $self.family = _family; };
+
     $private.field.align = "center";
     $public.void.set_align = function (_align) { $self.align = _align; };
 
@@ -24,6 +27,7 @@
     $public.override.void.apply = function () {
 
         $self.element.innerHTML = $self.text;
+        $self.element.setAttribute("o-family", $self.family);
         $self.element.setAttribute("o-align", $self.align);
         $self.element.setAttribute("o-weight", $self.weight);
         $self.element.setAttribute("o-size", $self.size);
@@ -39,6 +43,7 @@
 
         let e = document.createElement($self.tag);
         e.innerHTML = $self.text;
+        e.setAttribute("o-family", $self.family);
         e.setAttribute("o-align", $self.align);
         e.setAttribute("o-weight", $self.weight);
         e.setAttribute("o-size", $self.size);
@@ -55,6 +60,16 @@
             .begin()
                 .absolute()
                 .sideFull()
+            .save();
+
+        $css.select($self.tag + "[o-family='roboto']")
+            .begin()
+                .textFamily("Roboto")
+            .save();
+
+        $css.select($self.tag + "[o-family='opensans']")
+            .begin()
+                .textFamily("Open Sans")
             .save();
 
         $css.select($self.tag + "[o-align='left']")
@@ -80,6 +95,11 @@
         $css.select($self.tag + "[o-weight='regular']")
             .begin()
                 .textWeight(400)
+            .save();
+
+        $css.select($self.tag + "[o-weight='semibold']")
+            .begin()
+                .textWeight(600)
             .save();
 
         $css.select($self.tag + "[o-weight='medium']")

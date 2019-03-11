@@ -113,6 +113,7 @@
     <Content Include="Files\css\main.css" />
     <Content Include="Files\img\ic_calendar.png" />
     <Content Include="Files\img\ic_destination.png" />
+    <Content Include="Files\img\ic_left_arrow.png" />
     <Content Include="Files\img\ic_origin.png" />
     <Content Include="Files\img\ic_swap.png" />
     <Content Include="Files\init.js" />

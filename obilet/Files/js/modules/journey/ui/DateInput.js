@@ -38,6 +38,7 @@
         _views.date.views.right.views.top.views.header = new TextView();
         _views.date.views.right.views.top.views.header.set_name("date_header");
         _views.date.views.right.views.top.views.header.set_text("Tarih");
+        _views.date.views.right.views.top.views.header.set_family("roboto");
         _views.date.views.right.views.top.views.header.set_align("left");
         _views.date.views.right.views.top.views.header.set_weight("medium");
         _views.date.views.right.views.top.views.header.set_size("smaller");
@@ -46,6 +47,7 @@
         _views.date.views.right.views.bottom.views.text = new TextView();
         _views.date.views.right.views.bottom.views.text.set_name("date_text");
         _views.date.views.right.views.bottom.views.text.set_text("1 Nisan 2019 Pazar");
+        _views.date.views.right.views.bottom.views.text.set_family("roboto");
         _views.date.views.right.views.bottom.views.text.set_align("left");
         _views.date.views.right.views.bottom.views.text.set_weight("regular");
         _views.date.views.right.views.bottom.views.text.set_size("small");
@@ -54,6 +56,7 @@
         _views.today.views.text = new TextView();
         _views.today.views.text.set_name("today_text");
         _views.today.views.text.set_text("Bugün");
+        _views.today.views.text.set_family("roboto");
         _views.today.views.text.set_align("center");
         _views.today.views.text.set_weight("regular");
         _views.today.views.text.set_size("smallest");
@@ -62,6 +65,7 @@
         _views.tomorrow.views.text = new TextView();
         _views.tomorrow.views.text.set_name("tomorrow_text");
         _views.tomorrow.views.text.set_text("Yarın");
+        _views.tomorrow.views.text.set_family("roboto");
         _views.tomorrow.views.text.set_align("center");
         _views.tomorrow.views.text.set_weight("regular");
         _views.tomorrow.views.text.set_size("smallest");

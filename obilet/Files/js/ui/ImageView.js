@@ -5,6 +5,9 @@
     $private.field.src = "";
     $public.void.set_src = function (_src) { $self.src = _src; };
 
+    $private.void.on_tap = function () { };
+    $public.delegate.onTap = function ($delegate) { $self.on_tap = $delegate; return $self; };
+
     $public.override.void.apply = function () {
 
         $self.img.src = $self.src;
@@ -18,6 +21,9 @@
         let e = document.createElement($self.tag);
 
         $self.img = document.createElement("img");
+
+        e.onclick = $self.on_tap;
+
         e.appendChild($self.img);
 
         return e;
