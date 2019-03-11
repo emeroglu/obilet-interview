@@ -99,7 +99,7 @@
 
         $css.select($self.tag + "[o-size='small']")
             .begin()
-                .textSize(16)
+                .textSize(15)
             .save();
 
         $css.select($self.tag + "[o-size='medium']")
@@ -124,7 +124,12 @@
 
         $css.select($self.tag + "[o-color='gray']")
             .begin()
-                .textColor("#666666")
+                .textColor($theme.color.gray)
+            .save();
+
+        $css.select($self.tag + "[o-color='blue']")
+            .begin()
+                .textColor($theme.color.blue)
             .save();
 
         $css.select($self.tag + "[o-color='black']")
