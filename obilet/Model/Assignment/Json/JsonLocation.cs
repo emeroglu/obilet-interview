@@ -9,5 +9,8 @@ namespace obilet.Model.Assignment.Json
 
         [JsonProperty(PropertyName = "name")]
         public string Name { get; set; }
+
+        [JsonProperty(PropertyName = "search")]
+        public string Search { get; set; }
     }
 }

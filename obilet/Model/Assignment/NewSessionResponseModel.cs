@@ -10,10 +10,10 @@ namespace obilet.Model.Assignment
 
     public class NewSessionDataModel
     {
-        [JsonProperty(PropertyName = "session_key")]
+        [JsonProperty(PropertyName = "sessionKey")]
         public string SessionKey { get; set; }
 
-        [JsonProperty(PropertyName = "device_key")]
+        [JsonProperty(PropertyName = "deviceKey")]
         public string DeviceKey { get; set; }
     }
 }

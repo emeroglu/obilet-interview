@@ -26,7 +26,39 @@
 
     $protected.override.void.on_feed = function (_views) {
 
-        _views.bar.views.text_input.set_placeholder("Search...");                
+        _views.bar.views.text_input.set_placeholder("Search...");
+        _views.bar.views.text_input.onChange(function () {
+
+            let query = _views.bar.views.text_input.text().toLowerCase() ;
+
+            if (query.length < 3) {
+
+                $data.location_selection = $data.locations.slice(0, 81);
+
+                _views.list.views.list.update();
+                
+            } else {
+
+                let filtered = [];
+                let location;
+
+                for (let index in $data.locations) {
+
+                    location = $data.locations[index];                    
+
+                    if (location.search.indexOf(query) != -1)
+                        filtered.push(location);
+
+                }
+
+                $data.location_selection = filtered;
+
+                _views.list.views.list.update();
+
+            }
+
+        });
+
 
         _views.back.views.icon.set_src($path.ic_left_arrow);
         _views.back.views.icon.onClick(function () {
@@ -39,7 +71,7 @@
                     return LocationItem;
                 })
                 .onModel(function () {
-                    return ["a", "b"];
+                    return $data.location_selection;
                 })
                 .onConstruct(function (_item, _model, _index) {
 
@@ -52,7 +84,13 @@
                 })
                 .onReady(function (_item, _model, _index) {                       
 
-                    _item.views.item.views.text.set_text(_model);
+                    _item.views.item.views.text.set_text(_model.name);
+                    _item.views.item.views.text.apply();
+
+                })
+                .onUpdate(function (_item, _model, _index) {
+
+                    _item.views.item.views.text.set_text(_model.name);
                     _item.views.item.views.text.apply();
 
                 });

@@ -41,7 +41,8 @@ namespace obilet.Controllers.Assignment
                 locationsDataModel.Locations.Add(new JsonLocation()
                 {
                     ID = busLocation.ID,                    
-                    Name = busLocation.Name
+                    Name = busLocation.Name,
+                    Search = busLocation.Name.ToLower().Replace("(", "").Replace(")", "")
                 });
             }
 

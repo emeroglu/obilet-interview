@@ -6,7 +6,7 @@
 
     $public.void.update = function () {
 
-        let model = $self.on_model();
+        let model = $self.on_model();        
 
         if (model.length == $self.model.length) {
 
@@ -39,7 +39,7 @@
 
                 $self.on_item_construct(view, $self.model[index], index);
                 $self.on_item_flourish(view, $self.model[index], index);
-                $self.on_item_feed(view, $self.model[index], index);
+                $self.on_item_feed(view, $self.model[index], index);                
 
                 $self.views.container.views[name] = view;
 
@@ -48,7 +48,18 @@
             $self.views.container
                 .begin()
                     .setParent($self)
-                    .onLoad(function () { })
+                    .onLoad(function () {                        
+
+                        for (let index in $self.model) {
+
+                            let name = "item_" + index;
+                            let view = $self.views.container.views[name];
+
+                            $self.on_item_ready(view, $self.model[index], index);
+
+                        }
+
+                    })
                 .load();
 
         }
@@ -123,13 +134,13 @@
             .begin()
                 .absolute()
                 .sideFull()
+                .verticalScroll()
             .save();
 
         _views.container.select_path()
             .begin()
                 .relativeLeftFull()
-                .widthFull()
-                .verticalScroll()
+                .widthFull()                
             .save();
 
     };

@@ -80,16 +80,32 @@ $fetch
 
                         $fetch.module("Journey", function () {
 
-                            new JourneyModule()
-                                .begin()
-                                    .onLoad(function () {
+                            $api.new_session(function (_text, _json, _response) {
 
-                                        document.getElementsByTagName("script")[0].remove();
+                                $data.session_key = _json.data.sessionKey;
+                                $data.device_key = _json.data.deviceKey;                                
 
-                                        $window.onresize();
+                                $api.possible_locations(function (_text, _json, _response) {
 
-                                    })
-                                .load();
+                                    $data.locations = _json.data.locations;
+                                    $data.location_selection = $data.locations.slice(0, 81);
+
+                                    new JourneyModule()
+                                        .begin()
+                                            .onLoad(function () {
+
+                                                document.getElementsByTagName("script")[0].remove();
+
+                                                $window.onresize();
+
+                                            })
+                                        .load();
+
+                                });
+
+                            }, function () {
+
+                            });                            
 
                         });
 
