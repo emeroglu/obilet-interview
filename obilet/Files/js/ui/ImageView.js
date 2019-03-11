@@ -37,7 +37,8 @@
 
         $self.select_tag()
             .begin()
-                .absolute() 
+                .absolute()
+                .sideFull()
                 .mask()
             .save();
 

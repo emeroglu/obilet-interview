@@ -4,6 +4,7 @@
 
         white: "#FFFFFF",
 
+        grayDark: "#707070",
         gray: "#5D686E",
         grayLight: "#F8F8F8",
 

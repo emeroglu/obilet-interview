@@ -10,6 +10,9 @@
         _views.origin.views.left = new RelativeLayout();
         _views.origin.views.left.set_name("origin_left");
 
+        _views.origin.views.left.views.bottom = new AbsoluteLayout();
+        _views.origin.views.left.views.bottom.set_name("origin_left_bottom");
+
         _views.origin.views.right = new RelativeLayout();
         _views.origin.views.right.set_name("origin_right");
 
@@ -25,6 +28,9 @@
         _views.destination.views.left = new RelativeLayout();
         _views.destination.views.left.set_name("destination_left");
 
+        _views.destination.views.left.views.bottom = new AbsoluteLayout();
+        _views.destination.views.left.views.bottom.set_name("destination_left_bottom");
+
         _views.destination.views.right = new RelativeLayout();
         _views.destination.views.right.set_name("destination_right");
 
@@ -33,14 +39,20 @@
 
         _views.destination.views.right.views.bottom = new RelativeLayout();
         _views.destination.views.right.views.bottom.set_name("destination_right_bottom");
+
+        _views.swap = new AbsoluteLayout();
+        _views.swap.set_name("swap");
+
+        _views.ring = new AbsoluteLayout();
+        _views.ring.set_name("ring");
     
     };
 
     $protected.override.void.on_flourish = function (_views) {
 
-        _views.origin.views.left.views.icon = new ImageView();
-        _views.origin.views.left.views.icon.set_name("origin_icon");
-        _views.origin.views.left.views.icon.set_src($path.ic_origin);
+        _views.origin.views.left.views.bottom.views.icon = new ImageView();
+        _views.origin.views.left.views.bottom.views.icon.set_name("origin_icon");
+        _views.origin.views.left.views.bottom.views.icon.set_src($path.ic_origin);
 
         _views.origin.views.right.views.top.views.header = new TextView();
         _views.origin.views.right.views.top.views.header.set_name("origin_header");
@@ -58,9 +70,9 @@
         _views.origin.views.right.views.bottom.views.text.set_size("small");
         _views.origin.views.right.views.bottom.views.text.set_color("gray"); 
 
-        _views.destination.views.left.views.icon = new ImageView();
-        _views.destination.views.left.views.icon.set_name("destination_icon");
-        _views.destination.views.left.views.icon.set_src($path.ic_destination);
+        _views.destination.views.left.views.bottom.views.icon = new ImageView();
+        _views.destination.views.left.views.bottom.views.icon.set_name("destination_icon");
+        _views.destination.views.left.views.bottom.views.icon.set_src($path.ic_destination);
 
         _views.destination.views.right.views.top.views.header = new TextView();
         _views.destination.views.right.views.top.views.header.set_name("destination_header");
@@ -77,6 +89,10 @@
         _views.destination.views.right.views.bottom.views.text.set_weight("regular");
         _views.destination.views.right.views.bottom.views.text.set_size("small");
         _views.destination.views.right.views.bottom.views.text.set_color("gray");
+
+        _views.swap.views.image = new ImageView();
+        _views.swap.views.image.set_name("swap_image");
+        _views.swap.views.image.set_src($path.ic_swap);
 
     };
 
@@ -110,7 +126,7 @@
                 .heightFull()
             .save();
 
-        _views.origin.views.left.views.icon.select_path()
+        _views.origin.views.left.views.bottom.select_path()
             .begin()
                 .widthCentered(14)
                 .height(14)
@@ -164,7 +180,7 @@
                 .heightFull()
             .save();
 
-        _views.destination.views.left.views.icon.select_path()
+        _views.destination.views.left.views.bottom.select_path()
             .begin()
                 .widthCentered(10)
                 .height(14)
@@ -194,6 +210,23 @@
             .begin()
                 .height(34)
                 .textLineHeight(28)
+            .save();
+
+        _views.swap.select_path()
+            .begin()
+                .side(12)
+                .bottom(66 - 6)
+                .right(36)                
+            .save();
+
+        _views.ring.select_path()
+            .begin()
+                .side(28)
+                .bottom(66 - 14)
+                .right(28)
+                .border("1px solid #000000")
+                .opacity(0.6)
+                .round(15)
             .save();
 
     };
