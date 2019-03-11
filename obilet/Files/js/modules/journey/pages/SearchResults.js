@@ -58,13 +58,13 @@
                 .onModel(function () {
                     return ["a", "b"];
                 })
-                .onConstruct(function (_view, _model, _index) {                    
+                .onConstruct(function (_item, _model, _index) {                    
 
                 })
-                .onFlourish(function (_view, _model, _index) {
+                .onFlourish(function (_item, _model, _index) {
 
                 })
-                .onFeed(function (_view, _model, _index) {
+                .onFeed(function (_item, _model, _index) {
 
                 });
 

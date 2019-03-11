@@ -21,6 +21,7 @@
   "/Files/js/ui/ListView.js",
   "/Files/js/ui/ImageView.js",
   "/Files/js/ui/RelativeLayout.js",
+  "/Files/js/ui/TextInput.js",
   "/Files/js/ui/TextView.js"
 
 ]

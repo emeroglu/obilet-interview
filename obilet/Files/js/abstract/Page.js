@@ -87,6 +87,7 @@
                 .absolute()
                 .sideFull()
                 .mask()
+                .backgroundColor($theme.color.grayLight)
             .save()
             .state("initial")
                 .opacity(1)

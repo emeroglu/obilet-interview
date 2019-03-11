@@ -1,6 +1,6 @@
 ﻿$js.compile("SearchResultItem", View, function ($public, $private, $protected, $self) {
 
-    $protected.override.func.on_key = function () { return "search-result-item"; };
+    $protected.override.func.on_key = function () { return "search-result-item-view"; };
 
     $protected.override.void.on_construct = function (_views) {        
 
@@ -123,8 +123,7 @@
         $self.select_tag()
             .begin()
                 .relativeLeftFull()
-                .height(80)
-                .backgroundColor($theme.color.grayLighter)
+                .height(80)                
             .save();
 
         _views.item.select_path()

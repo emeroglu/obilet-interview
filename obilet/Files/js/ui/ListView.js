@@ -72,6 +72,9 @@
     $protected.void.on_item_feed = function (_view, _model, _index) { };
     $public.delegate.onFeed = function ($delegate) { $self.on_item_feed = $delegate; return $self; };
 
+    $protected.void.on_item_ready = function (_view, _model, _index) { };
+    $public.delegate.onReady = function ($delegate) { $self.on_item_ready = $delegate; return $self; };
+
     $protected.void.on_item_update = function (_view, _model, _index) { };
     $public.delegate.onUpdate = function ($delegate) { $self.on_item_update = $delegate; return $self; };
 
@@ -96,6 +99,21 @@
             _views.container.views[name] = view;
 
         }
+
+    };
+
+    $protected.override.void.on_ready = function (_views, $ready) {
+
+        for (let index in $self.model) {
+
+            let name = "item_" + index;
+            let view = _views.container.views[name];
+
+            $self.on_item_ready(view, $self.model[index], index);
+
+        }
+
+        $ready();
 
     };
 

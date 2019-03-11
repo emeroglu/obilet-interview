@@ -7,6 +7,7 @@
   "/Files/js/modules/journey/pages/SearchResults.js",
 
   "/Files/js/modules/journey/ui/DateInput.js",
+  "/Files/js/modules/journey/ui/LocationItem.js",
   "/Files/js/modules/journey/ui/RouteInput.js",
   "/Files/js/modules/journey/ui/SearchResultItem.js"
 

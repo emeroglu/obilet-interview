@@ -68,22 +68,19 @@
         _views.route.select()
             .begin()
                 .widthFull()
-                .height(158) 
-                .backgroundColor($theme.color.grayLight)
+                .height(158)                 
             .save();
 
         _views.date.select()
             .begin()
                 .widthFull()
-                .height(92)
-                .backgroundColor($theme.color.grayLight)
+                .height(92)                
             .save();
 
         _views.submit.select()
             .begin()
                 .widthFull()
-                .height(85)
-                .backgroundColor($theme.color.grayLight)
+                .height(85)                
             .save();
 
         _views.rest.select()

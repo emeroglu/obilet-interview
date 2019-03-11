@@ -2,7 +2,7 @@
 
     $protected.override.func.on_key = function () { return "journey"; };
 
-    $protected.override.func.on_types = function () { return [DateInput, RouteInput, SearchResultItem]; };
+    $protected.override.func.on_types = function () { return [DateInput, LocationItem, RouteInput, SearchResultItem]; };
 
     $protected.override.void.on_construct = function (_pages, _views) {
 
