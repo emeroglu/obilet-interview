@@ -95,7 +95,19 @@
 
                 });
 
-    };    
+    };   
+
+    $protected.override.void.on_show = function (_views) {        
+
+        _views.bar.views.text_input.reset();
+
+        $data.location_selection = $data.locations.slice(0, 81);
+
+        _views.list.views.list.update();
+
+        _views.list.views.list.scrollToTop();
+
+    };
 
     $protected.override.void.on_style = function (_views) {
 

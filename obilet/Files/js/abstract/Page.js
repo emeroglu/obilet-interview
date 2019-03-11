@@ -17,7 +17,7 @@
     $public.delegate.setModule = function (_module) { $self.module = _module; return $self; };
 
     $private.void.on_load = function () { };
-    $public.delegate.onLoad = function ($delegate) { $self.on_load = $delegate; return $self; };
+    $public.delegate.onLoad = function ($delegate) { $self.on_load = $delegate; return $self; };    
 
     $public.virtual.func.is_initial = function () { return false; };
 
@@ -30,6 +30,11 @@
     $protected.virtual.void.on_style = function (_views) { };
     $protected.virtual.void.on_ready = function (_views, $ready) { $ready(); };
 
+    $protected.virtual.void.on_show = function (_views) { };
+    $protected.virtual.void.on_shown = function (_views) { }
+
+    $protected.virtual.void.on_hide = function (_views) { };
+    $protected.virtual.void.on_hidden = function (_views) { };
 
     $protected.virtual.void.on_wide_style = function (_views) { $css.target = $view.page.get_tag() + "-" + $view.port; };
     $protected.virtual.void.on_medium_style = function (_views) { $css.target = $view.page.get_tag() + "-" + $view.port; };
@@ -178,9 +183,11 @@
 
     $public.void.show = function (_from, _to, $on_show) {
 
-        $view.page = $self;
+        $view.page = $self;        
 
         $self.element.className = "o-ease-500 o-disp o-" + _from;
+
+        $self.on_show($self.views);
 
         setTimeout(function () {
 
@@ -189,6 +196,8 @@
             setTimeout(function () {
 
                 $self.element.className = "o-disp o-" + _to;
+
+                $self.on_shown($self.views);
 
                 $on_show();
 
@@ -200,6 +209,8 @@
 
     $public.void.hide = function (_from, _to, $on_hide) {
 
+        $self.on_hide($self.views);
+
         $self.element.className = "o-ease-500 o-disp o-" + _from;
 
         setTimeout(function () {
@@ -209,6 +220,8 @@
             setTimeout(function () {
 
                 $self.element.className = "o-none o-" + _to;
+
+                $self.on_hidden($self.views);
 
                 $on_hide();
 

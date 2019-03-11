@@ -4,6 +4,12 @@
 
     $private.field.model = [];
 
+    $public.void.scrollToTop = function () {        
+
+        $self.get_element().scrollTop = 0;        
+
+    };
+
     $public.void.update = function () {
 
         let model = $self.on_model();        
