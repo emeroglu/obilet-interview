@@ -67,11 +67,32 @@
     $protected.override.void.on_flourish = function (_views) {
 
         _views.origin.views.left.views.bottom.views.icon = new ImageView();
-        _views.origin.views.left.views.bottom.views.icon.set_name("origin_icon");
-        _views.origin.views.left.views.bottom.views.icon.set_src($path.ic_origin);
+        _views.origin.views.left.views.bottom.views.icon.set_name("origin_icon");        
 
         _views.origin.views.right.views.top.views.header = new TextView();
         _views.origin.views.right.views.top.views.header.set_name("origin_header");
+        
+        _views.origin.views.right.views.bottom.views.text = new TextView();
+        _views.origin.views.right.views.bottom.views.text.set_name("origin_text");
+         
+        _views.destination.views.left.views.bottom.views.icon = new ImageView();
+        _views.destination.views.left.views.bottom.views.icon.set_name("destination_icon");
+        
+        _views.destination.views.right.views.top.views.header = new TextView();
+        _views.destination.views.right.views.top.views.header.set_name("destination_header");
+        
+        _views.destination.views.right.views.bottom.views.text = new TextView();
+        _views.destination.views.right.views.bottom.views.text.set_name("destination_text");
+        
+        _views.swap.views.image = new ImageView();
+        _views.swap.views.image.set_name("swap_image");
+        
+    };
+
+    $protected.extension.void.on_feed = function (_views) {
+
+        _views.origin.views.left.views.bottom.views.icon.set_src($path.ic_origin);
+
         _views.origin.views.right.views.top.views.header.set_text("Nereden");
         _views.origin.views.right.views.top.views.header.set_family("roboto");
         _views.origin.views.right.views.top.views.header.set_align("left");
@@ -79,21 +100,15 @@
         _views.origin.views.right.views.top.views.header.set_size("smaller");
         _views.origin.views.right.views.top.views.header.set_color("blue"); 
 
-        _views.origin.views.right.views.bottom.views.text = new TextView();
-        _views.origin.views.right.views.bottom.views.text.set_name("origin_text");
         _views.origin.views.right.views.bottom.views.text.set_text("");
         _views.origin.views.right.views.bottom.views.text.set_family("roboto");
         _views.origin.views.right.views.bottom.views.text.set_align("left");
         _views.origin.views.right.views.bottom.views.text.set_weight("regular");
         _views.origin.views.right.views.bottom.views.text.set_size("small");
-        _views.origin.views.right.views.bottom.views.text.set_color("gray"); 
+        _views.origin.views.right.views.bottom.views.text.set_color("gray");
 
-        _views.destination.views.left.views.bottom.views.icon = new ImageView();
-        _views.destination.views.left.views.bottom.views.icon.set_name("destination_icon");
         _views.destination.views.left.views.bottom.views.icon.set_src($path.ic_destination);
 
-        _views.destination.views.right.views.top.views.header = new TextView();
-        _views.destination.views.right.views.top.views.header.set_name("destination_header");
         _views.destination.views.right.views.top.views.header.set_text("Nereye");
         _views.destination.views.right.views.top.views.header.set_family("roboto");
         _views.destination.views.right.views.top.views.header.set_align("left");
@@ -101,8 +116,6 @@
         _views.destination.views.right.views.top.views.header.set_size("smaller");
         _views.destination.views.right.views.top.views.header.set_color("blue");
 
-        _views.destination.views.right.views.bottom.views.text = new TextView();
-        _views.destination.views.right.views.bottom.views.text.set_name("destination_text");
         _views.destination.views.right.views.bottom.views.text.set_text("");
         _views.destination.views.right.views.bottom.views.text.set_family("roboto");
         _views.destination.views.right.views.bottom.views.text.set_align("left");
@@ -110,13 +123,7 @@
         _views.destination.views.right.views.bottom.views.text.set_size("small");
         _views.destination.views.right.views.bottom.views.text.set_color("gray");
 
-        _views.swap.views.image = new ImageView();
-        _views.swap.views.image.set_name("swap_image");
         _views.swap.views.image.set_src($path.ic_swap);
-
-    };
-
-    $protected.extension.void.on_feed = function (_views) {
 
         _views.swap.onClick(function () {            
 

@@ -1,4 +1,77 @@
-﻿$js.compile("DateInput", View, function ($public, $private, $protected, $self) {
+﻿$js.compile("DateInput", View, function ($public, $private, $protected, $self) {    
+
+    $private.field.today = null;
+    $private.field.tomorrow = null;
+
+    $private.field.months = ["Ocak", "Şubat", "Mart", "Nisan", "Mayıs", "Haziran", "Temmuz", "Ağustos", "Eylül", "Ekim", "Kasım", "Aralık"];
+    $private.field.days = ["Pazar", "Pazartesi", "Salı", "Çarşamba", "Perşembe", "Cuma", "Cumartesi"];
+
+    $private.field.date = null;
+    $public.func.get_date = function () { return $self.date; };
+
+    $private.void.apply_today = function () {
+
+        let day = $self.today.getDate();
+        let month = $self.months[$self.today.getMonth()];
+        let year = $self.today.getFullYear();
+        let dow = $self.days[$self.today.getDay()];
+
+        let text = day + " " + month + " " + year + " " + dow;
+
+        $self.views.date.views.right.views.bottom.views.text.set_text(text);
+        $self.views.date.views.right.views.bottom.views.text.apply();
+
+        $self.views.today.views.text.set_color("white");
+        $self.views.today.views.text.apply();
+
+        $self.views.today.select()
+            .begin()
+                .backgroundColor($theme.color.gray)
+            .commit();
+
+        $self.views.tomorrow.views.text.set_color("gray");
+        $self.views.tomorrow.views.text.apply();
+
+        $self.views.tomorrow.select()
+            .begin()
+                .backgroundColor($theme.color.white)
+            .commit();
+
+        $self.date = $self.today;
+
+    };
+
+    $private.void.apply_tomorrow = function () {
+
+        let day = $self.tomorrow.getDate();
+        let month = $self.months[$self.tomorrow.getMonth()];
+        let year = $self.tomorrow.getFullYear();
+        let dow = $self.days[$self.tomorrow.getDay()];
+
+        let text = day + " " + month + " " + year + " " + dow;
+
+        $self.views.date.views.right.views.bottom.views.text.set_text(text);
+        $self.views.date.views.right.views.bottom.views.text.apply();
+
+        $self.views.today.views.text.set_color("gray");
+        $self.views.today.views.text.apply();
+
+        $self.views.today.select()
+            .begin()
+                .backgroundColor($theme.color.white)
+            .commit();
+
+        $self.views.tomorrow.views.text.set_color("white");
+        $self.views.tomorrow.views.text.apply();
+
+        $self.views.tomorrow.select()
+            .begin()
+                .backgroundColor($theme.color.gray)
+            .commit();
+
+        $self.date = $self.tomorrow;
+
+    };
 
     $protected.override.func.on_key = function () { return "date-input"; };
 
@@ -27,6 +100,7 @@
 
         _views.tomorrow = new AbsoluteLayout();
         _views.tomorrow.set_name("tomorrow");
+
     };
 
     $protected.override.void.on_flourish = function (_views) {
@@ -79,6 +153,26 @@
         _views.tomorrow.views.text.set_weight("regular");
         _views.tomorrow.views.text.set_size("smallest");
         _views.tomorrow.views.text.set_color("gray");
+
+        _views.today.onClick(function () {
+            $self.apply_today();
+        });
+
+        _views.tomorrow.onClick(function () {
+            $self.apply_tomorrow();
+        });
+
+    };
+
+    $protected.override.void.on_ready = function (_views, $ready) {
+
+        $self.today = new Date();
+        $self.tomorrow = new Date();
+        $self.tomorrow.setDate($self.tomorrow.getDate() + 1);        
+
+        $self.apply_tomorrow();
+
+        $ready();
 
     };
 
@@ -150,8 +244,7 @@
                 .height(22)
                 .round(2)
                 .bottom(40)
-                .right(24)
-                .backgroundColor($theme.color.gray)
+                .right(24)                
                 .border("1px solid " + $theme.color.gray)
             .save();
 
@@ -161,8 +254,7 @@
                 .height(22)
                 .round(2)
                 .bottom(8)
-                .right(24)
-                .backgroundColor($theme.color.white)
+                .right(24)                
                 .border("1px solid " + $theme.color.gray)
             .save();
 
