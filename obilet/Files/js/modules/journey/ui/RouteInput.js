@@ -119,11 +119,11 @@
 
         _views.swap.views.image.set_src($path.ic_swap);
 
-        _views.swap.onClick(function () {            
+        _views.swap.onClick(function () {                        
 
-            let x = $self.origin;
-            $self.origin = $self.destination;
-            $self.destination = x;
+            let x = $data.origin;
+            $data.origin = $data.destination;
+            $data.destination = x;
 
             $self.apply();
 

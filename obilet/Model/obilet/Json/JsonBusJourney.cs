@@ -6,58 +6,58 @@ namespace obilet.Model.obilet.Abstract.Json
 {
     public class JsonBusJourney
     {
-        [JsonProperty(PropertyName = "id")]
+        [JsonProperty(PropertyName = "id", NullValueHandling = NullValueHandling.Ignore)]
         public int ID { get; set; }
 
-        [JsonProperty(PropertyName = "partner-id")]
+        [JsonProperty(PropertyName = "partner-id", NullValueHandling = NullValueHandling.Ignore)]
         public int PartnerID { get; set; }
 
-        [JsonProperty(PropertyName = "partner-name")]
+        [JsonProperty(PropertyName = "partner-name", NullValueHandling = NullValueHandling.Ignore)]
         public string PartnerName { get; set; }
 
-        [JsonProperty(PropertyName = "route-id")]
+        [JsonProperty(PropertyName = "route-id", NullValueHandling = NullValueHandling.Ignore)]
         public int RouteID { get; set; }
 
-        [JsonProperty(PropertyName = "bus-type")]
+        [JsonProperty(PropertyName = "bus-type", NullValueHandling = NullValueHandling.Ignore)]
         public string BusType { get; set; }
 
-        [JsonProperty(PropertyName = "total-seats")]
+        [JsonProperty(PropertyName = "total-seats", NullValueHandling = NullValueHandling.Ignore)]
         public int TotalSeats { get; set; }
 
-        [JsonProperty(PropertyName = "available-seats")]
+        [JsonProperty(PropertyName = "available-seats", NullValueHandling = NullValueHandling.Ignore)]
         public int AvailableSeats { get; set; }
 
-        [JsonProperty(PropertyName = "journey")]
+        [JsonProperty(PropertyName = "journey", NullValueHandling = NullValueHandling.Ignore)]
         public JsonJourney Journey { get; set; }
 
-        [JsonProperty(PropertyName = "features")]
+        [JsonProperty(PropertyName = "features", NullValueHandling = NullValueHandling.Ignore)]
         public List<JsonFeature> Features { get; set; }
 
-        [JsonProperty(PropertyName = "origin-location")]
+        [JsonProperty(PropertyName = "origin-location", NullValueHandling = NullValueHandling.Ignore)]
         public string OriginLocation { get; set; }
 
-        [JsonProperty(PropertyName = "destination-location")]
+        [JsonProperty(PropertyName = "destination-location", NullValueHandling = NullValueHandling.Ignore)]
         public string DestinationLocation { get; set; }
 
-        [JsonProperty(PropertyName = "is-active")]
+        [JsonProperty(PropertyName = "is-active", NullValueHandling = NullValueHandling.Ignore)]
         public bool IsActive { get; set; }
 
-        [JsonProperty(PropertyName = "origin-location-id")]
+        [JsonProperty(PropertyName = "origin-location-id", NullValueHandling = NullValueHandling.Ignore)]
         public int OriginLocationID { get; set; }
 
-        [JsonProperty(PropertyName = "destination-location-id")]
+        [JsonProperty(PropertyName = "destination-location-id", NullValueHandling = NullValueHandling.Ignore)]
         public int DestinationLocationID { get; set; }
 
-        [JsonProperty(PropertyName = "is-promoted")]
+        [JsonProperty(PropertyName = "is-promoted", NullValueHandling = NullValueHandling.Ignore)]
         public bool IsPromoted { get; set; }
 
-        [JsonProperty(PropertyName = "cancellation-offset")]
+        [JsonProperty(PropertyName = "cancellation-offset", NullValueHandling = NullValueHandling.Ignore)]
         public int CancellationOffset { get; set; }
 
-        [JsonProperty(PropertyName = "has-bus-shuttle")]
+        [JsonProperty(PropertyName = "has-bus-shuttle", NullValueHandling = NullValueHandling.Ignore)]
         public bool HasBusShuttle { get; set; }
 
-        [JsonProperty(PropertyName = "disable-sales-without-gov-id")]
+        [JsonProperty(PropertyName = "disable-sales-without-gov-id", NullValueHandling = NullValueHandling.Ignore)]
         public bool DisableSalesWithoutGovID { get; set; }
 
         [JsonProperty(PropertyName = "display-offset", NullValueHandling = NullValueHandling.Ignore)]
