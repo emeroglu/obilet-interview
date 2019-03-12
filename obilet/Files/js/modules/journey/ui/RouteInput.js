@@ -141,8 +141,6 @@
 
             $data.selection = "destination";
 
-
-
             $nav.to("location_selector", "right", "center", "center", "left");
 
         });
@@ -155,9 +153,7 @@
 
             if ($data.origin.id == $data.destination.id) {
 
-                if ($data.selection == "origin") {
-
-                    alert();
+                if ($data.selection == "origin") {                    
 
                     for (let index in $data.cities) {
 
