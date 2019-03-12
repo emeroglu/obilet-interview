@@ -1,7 +1,7 @@
 # obilet-interview
 
 # Backend Specs
-Backend consits of four controllers
+Backend consists of four controllers
 
 ##### SiteController
 Serves the client-side files
