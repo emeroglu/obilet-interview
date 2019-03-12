@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>D:\SourceTree\obilet-interview\Publish</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/App_global.asax.compiled">
+      <publishTime>03/12/2019 13:12:16</publishTime>
+    </File>
+    <File Include="bin/App_global.asax.dll">
+      <publishTime>03/12/2019 13:12:16</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Infrastructure.dll">
+      <publishTime>07/25/2012 11:48:56</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>11/27/2018 18:07:34</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.pdb">
+      <publishTime>11/27/2018 17:59:08</publishTime>
+    </File>
+    <File Include="bin/obilet.dll">
+      <publishTime>03/12/2019 13:12:14</publishTime>
+    </File>
+    <File Include="bin/obilet.pdb">
+      <publishTime>03/12/2019 13:12:14</publishTime>
+    </File>
+    <File Include="bin/System.Net.Http.dll">
+      <publishTime>09/07/2018 10:59:08</publishTime>
+    </File>
+    <File Include="bin/System.Net.Http.Formatting.dll">
+      <publishTime>01/28/2015 03:02:42</publishTime>
+    </File>
+    <File Include="bin/System.Security.Cryptography.Algorithms.dll">
+      <publishTime>11/05/2016 04:57:14</publishTime>
+    </File>
+    <File Include="bin/System.Security.Cryptography.Encoding.dll">
+      <publishTime>11/05/2016 04:57:08</publishTime>
+    </File>
+    <File Include="bin/System.Security.Cryptography.Primitives.dll">
+      <publishTime>11/05/2016 04:57:18</publishTime>
+    </File>
+    <File Include="bin/System.Security.Cryptography.X509Certificates.dll">
+      <publishTime>11/05/2016 04:57:18</publishTime>
+    </File>
+    <File Include="bin/System.Web.Helpers.dll">
+      <publishTime>11/28/2018 13:04:24</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.dll">
+      <publishTime>01/28/2015 03:02:54</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.WebHost.dll">
+      <publishTime>01/28/2015 03:03:46</publishTime>
+    </File>
+    <File Include="bin/System.Web.Mvc.dll">
+      <publishTime>11/28/2018 12:59:46</publishTime>
+    </File>
+    <File Include="bin/System.Web.Razor.dll">
+      <publishTime>11/28/2018 13:00:12</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Deployment.dll">
+      <publishTime>11/28/2018 13:04:24</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.dll">
+      <publishTime>11/28/2018 13:04:24</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Razor.dll">
+      <publishTime>11/28/2018 13:04:24</publishTime>
+    </File>
+    <File Include="Files/config.json">
+      <publishTime>03/06/2019 12:09:49</publishTime>
+    </File>
+    <File Include="Files/css/main.css">
+      <publishTime>03/11/2019 00:35:28</publishTime>
+    </File>
+    <File Include="Files/img/ic_calendar.png">
+      <publishTime>03/11/2019 12:19:28</publishTime>
+    </File>
+    <File Include="Files/img/ic_destination.png">
+      <publishTime>03/11/2019 11:12:24</publishTime>
+    </File>
+    <File Include="Files/img/ic_left_arrow.png">
+      <publishTime>03/11/2019 14:20:09</publishTime>
+    </File>
+    <File Include="Files/img/ic_origin.png">
+      <publishTime>03/11/2019 11:12:24</publishTime>
+    </File>
+    <File Include="Files/img/ic_right_arrow.png">
+      <publishTime>03/11/2019 22:20:54</publishTime>
+    </File>
+    <File Include="Files/img/ic_swap.png">
+      <publishTime>03/11/2019 11:53:22</publishTime>
+    </File>
+    <File Include="Files/img/logo.png">
+      <publishTime>03/12/2019 12:53:47</publishTime>
+    </File>
+    <File Include="Files/init.js">
+      <publishTime>03/12/2019 13:06:35</publishTime>
+    </File>
+    <File Include="Files/js/abstract/Module.js">
+      <publishTime>03/11/2019 14:10:02</publishTime>
+    </File>
+    <File Include="Files/js/abstract/Page.js">
+      <publishTime>03/12/2019 02:31:22</publishTime>
+    </File>
+    <File Include="Files/js/abstract/View.js">
+      <publishTime>03/11/2019 22:56:50</publishTime>
+    </File>
+    <File Include="Files/js/abstract/WebRequest.js">
+      <publishTime>03/12/2019 11:54:23</publishTime>
+    </File>
+    <File Include="Files/js/config.json">
+      <publishTime>03/12/2019 00:38:23</publishTime>
+    </File>
+    <File Include="Files/js/modules/journey/config.json">
+      <publishTime>03/12/2019 00:56:58</publishTime>
+    </File>
+    <File Include="Files/js/modules/journey/module.js">
+      <publishTime>03/12/2019 00:57:07</publishTime>
+    </File>
+    <File Include="Files/js/modules/journey/pages/LocationSelector.js">
+      <publishTime>03/12/2019 12:47:59</publishTime>
+    </File>
+    <File Include="Files/js/modules/journey/pages/Search.js">
+      <publishTime>03/12/2019 11:09:38</publishTime>
+    </File>
+    <File Include="Files/js/modules/journey/pages/SearchResults.js">
+      <publishTime>03/12/2019 11:35:01</publishTime>
+    </File>
+    <File Include="Files/js/modules/journey/ui/DateInput.js">
+      <publishTime>03/12/2019 11:02:02</publishTime>
+    </File>
+    <File Include="Files/js/modules/journey/ui/LocationItem.js">
+      <publishTime>03/12/2019 12:32:45</publishTime>
+    </File>
+    <File Include="Files/js/modules/journey/ui/RouteInput.js">
+      <publishTime>03/12/2019 12:39:46</publishTime>
+    </File>
+    <File Include="Files/js/modules/journey/ui/SearchResultItem.js">
+      <publishTime>03/12/2019 11:14:26</publishTime>
+    </File>
+    <File Include="Files/js/services/api.js">
+      <publishTime>03/12/2019 12:50:29</publishTime>
+    </File>
+    <File Include="Files/js/services/bcast.js">
+      <publishTime>03/06/2019 17:32:33</publishTime>
+    </File>
+    <File Include="Files/js/services/css.js">
+      <publishTime>03/11/2019 14:32:29</publishTime>
+    </File>
+    <File Include="Files/js/services/data.js">
+      <publishTime>03/09/2019 23:20:22</publishTime>
+    </File>
+    <File Include="Files/js/services/http.js">
+      <publishTime>03/12/2019 11:55:47</publishTime>
+    </File>
+    <File Include="Files/js/services/lexicon.js">
+      <publishTime>03/09/2019 23:26:02</publishTime>
+    </File>
+    <File Include="Files/js/services/nav.js">
+      <publishTime>03/11/2019 14:48:28</publishTime>
+    </File>
+    <File Include="Files/js/services/path.js">
+      <publishTime>03/12/2019 12:55:54</publishTime>
+    </File>
+    <File Include="Files/js/services/theme.js">
+      <publishTime>03/11/2019 22:42:32</publishTime>
+    </File>
+    <File Include="Files/js/services/view.js">
+      <publishTime>03/11/2019 01:54:16</publishTime>
+    </File>
+    <File Include="Files/js/tools/fetch.js">
+      <publishTime>03/06/2019 17:28:42</publishTime>
+    </File>
+    <File Include="Files/js/tools/js.js">
+      <publishTime>03/06/2019 17:10:40</publishTime>
+    </File>
+    <File Include="Files/js/ui/AbsoluteLayout.js">
+      <publishTime>03/10/2019 23:54:12</publishTime>
+    </File>
+    <File Include="Files/js/ui/Button.js">
+      <publishTime>03/11/2019 22:53:46</publishTime>
+    </File>
+    <File Include="Files/js/ui/ImageView.js">
+      <publishTime>03/11/2019 22:56:06</publishTime>
+    </File>
+    <File Include="Files/js/ui/ListView.js">
+      <publishTime>03/12/2019 11:00:21</publishTime>
+    </File>
+    <File Include="Files/js/ui/RelativeLayout.js">
+      <publishTime>03/10/2019 23:54:54</publishTime>
+    </File>
+    <File Include="Files/js/ui/TextInput.js">
+      <publishTime>03/12/2019 00:49:50</publishTime>
+    </File>
+    <File Include="Files/js/ui/TextView.js">
+      <publishTime>03/11/2019 22:41:08</publishTime>
+    </File>
+    <File Include="PrecompiledApp.config">
+      <publishTime>03/12/2019 13:12:14</publishTime>
+    </File>
+    <File Include="robots.txt">
+      <publishTime>03/12/2019 13:11:57</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>03/12/2019 13:10:10</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

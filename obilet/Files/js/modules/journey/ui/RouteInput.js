@@ -1,7 +1,10 @@
 ﻿$js.compile("RouteInput", View, function ($public, $private, $protected, $self) {    
 
     $public.override.void.apply = function () {
-        
+
+        $cookie.store("last_selected_origin_id", $data.origin.id);
+        $cookie.store("last_selected_destination_id", $data.destination.id);
+
         $self.views.origin.views.right.views.bottom.views.text.set_text($data.origin.name);
         $self.views.origin.views.right.views.bottom.views.text.apply();
 

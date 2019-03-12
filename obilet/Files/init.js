@@ -86,6 +86,7 @@ $fetch
 
             $global.$api = new $api();            
             $global.$bcast = new $bcast();
+            $global.$cookie = new $cookie();
             $global.$css = new $css();
             $global.$data = new $data();
             $global.$http = new $http();
@@ -132,8 +133,20 @@ $fetch
 
                                 $data.cities = $data.locations.slice(0, 81);
 
-                                $data.origin = $data.locations[0];
-                                $data.destination = $data.locations[2];
+                                let last_selected_origin_id = $cookie.recall("last_selected_origin_id");
+                                let last_selected_destination_id = $cookie.recall("last_selected_destination_id");
+
+                                if (last_selected_origin_id == "") {
+
+                                    $data.origin = $data.locations[0];
+                                    $data.destination = $data.locations[2];
+
+                                } else {
+
+                                    $data.origin = $data.locations.filter(l => l.id == last_selected_origin_id)[0];
+                                    $data.destination = $data.locations.filter(l => l.id == last_selected_destination_id)[0];
+
+                                }
 
                                 new JourneyModule()
                                     .begin()

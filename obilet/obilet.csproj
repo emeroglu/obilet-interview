@@ -132,6 +132,7 @@
     <Content Include="Files\js\modules\journey\ui\SearchResultItem.js" />
     <Content Include="Files\js\services\api.js" />
     <Content Include="Files\js\services\bcast.js" />
+    <Content Include="Files\js\services\cookie.js" />
     <Content Include="Files\js\services\css.js" />
     <Content Include="Files\js\services\lexicon.js" />
     <Content Include="Files\js\services\theme.js" />
@@ -151,6 +152,7 @@
     <Content Include="Files\js\ui\TextInput.js" />
     <Content Include="Files\js\ui\TextView.js" />
     <Content Include="Global.asax" />
+    <Content Include="robots.txt" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -217,6 +219,7 @@
     <Content Include="Files\js\modules\journey\config.json" />
     <Content Include="Files\js\config.json" />
     <None Include="packages.config" />
+    <None Include="Properties\PublishProfiles\obilet.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
