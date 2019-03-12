@@ -146,7 +146,7 @@ $fetch
                                             cover.style = "position: absolute; width: 100vw; height: 100vh; top: 0px; left: 0px; margin: 0; padding: 0; background-color: #FFFFFF; opacity: 0; z-index: 1;";
 
                                             setTimeout(function () {
-                                                //cover.remove();
+                                                cover.remove();
                                             }, 550);
 
                                             
