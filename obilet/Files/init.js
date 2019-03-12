@@ -90,6 +90,9 @@ $fetch
                                     $data.locations = _json.data.locations;
                                     $data.location_selection = $data.locations.slice(0, 81);
 
+                                    $data.origin = $data.locations[0];
+                                    $data.destination = $data.locations[2];
+
                                     new JourneyModule()
                                         .begin()
                                             .onLoad(function () {

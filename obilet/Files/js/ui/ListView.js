@@ -42,6 +42,8 @@
                 let view;
                 eval("view = new " + $self.on_item().name + "();");
                 view.set_name(name);            
+                view.set_index(index);
+                view.set_model($self.model[index]);
 
                 $self.on_item_construct(view, $self.model[index], index);
                 $self.on_item_flourish(view, $self.model[index], index);
@@ -107,7 +109,9 @@
             let name = "item_" + index;
             let view;
             eval("view = new " + $self.on_item().name + "();");
-            view.set_name(name);            
+            view.set_name(name);
+            view.set_index(index);
+            view.set_model($self.model[index]);
 
             $self.on_item_construct(view, $self.model[index], index);
             $self.on_item_flourish(view, $self.model[index], index);

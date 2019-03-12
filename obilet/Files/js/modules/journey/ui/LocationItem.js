@@ -1,5 +1,11 @@
 ﻿$js.compile("LocationItem", View, function ($public, $private, $protected, $self) {
 
+    $private.field.index = -1;
+    $public.void.set_index = function (_index) { $self.index = _index; }
+
+    $private.field.model = -1;
+    $public.void.set_model = function (_model) { $self.model = _model; }
+
     $protected.override.func.on_key = function () { return "location-item-view"; };
 
     $protected.override.void.on_construct = function (_views) {        
@@ -24,6 +30,21 @@
         _views.item.views.text.set_weight("regular");
         _views.item.views.text.set_size("smallest");
         _views.item.views.text.set_color("gray");        
+
+        _views.item.onClick(function () {            
+
+            if ($data.selection == "origin")
+                $data.origin = $self.model;
+            else if ($data.selection == "destination")
+                $data.destination = $self.model;
+
+            $data.selection = "";
+
+            $bcast.shout("update_route");
+
+            $nav.to("search", "left", "center", "center", "right");
+
+        });
 
     };
 

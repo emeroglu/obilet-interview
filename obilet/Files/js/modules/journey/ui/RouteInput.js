@@ -1,17 +1,11 @@
-﻿$js.compile("RouteInput", View, function ($public, $private, $protected, $self) {
-
-    $private.field.origin = {};
-    $public.void.set_origin = function (_origin) { $self.origin = _origin; };
-
-    $private.field.destination = {};
-    $public.void.set_destination = function (_destination) { $self.destination = _destination; };
+﻿$js.compile("RouteInput", View, function ($public, $private, $protected, $self) {    
 
     $public.override.void.apply = function () {
-
-        $self.views.origin.views.right.views.bottom.views.text.set_text($self.origin.name);
+        
+        $self.views.origin.views.right.views.bottom.views.text.set_text($data.origin.name);
         $self.views.origin.views.right.views.bottom.views.text.apply();
 
-        $self.views.destination.views.right.views.bottom.views.text.set_text($self.destination.name);
+        $self.views.destination.views.right.views.bottom.views.text.set_text($data.destination.name);
         $self.views.destination.views.right.views.bottom.views.text.apply();
 
     };
@@ -136,19 +130,20 @@
         });
 
         _views.origin.onClick(function () {
+            $data.selection = "origin";
             $nav.to("location_selector", "right", "center", "center", "left");
         });
 
         _views.destination.onClick(function () {
+            $data.selection = "destination";
             $nav.to("location_selector", "right", "center", "center", "left");
         });
 
     };
 
-    $protected.override.void.on_ready = function (_views, $ready) {
+    $protected.override.void.on_ready = function (_views, $ready) {        
 
-        $self.origin = $data.locations[0];
-        $self.destination = $data.locations[2];
+        $bcast.listen("update_route", function () { $self.apply(); });
 
         $self.apply();
 

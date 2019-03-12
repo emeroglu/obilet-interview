@@ -1,5 +1,11 @@
 ﻿$js.compile("SearchResultItem", View, function ($public, $private, $protected, $self) {
 
+    $private.field.index = -1;
+    $public.void.set_index = function (_index) { $self.index = _index; }
+
+    $private.field.model = -1;
+    $public.void.set_model = function (_model) { $self.model = _model; }
+
     $protected.override.func.on_key = function () { return "search-result-item-view"; };
 
     $protected.override.void.on_construct = function (_views) {        
