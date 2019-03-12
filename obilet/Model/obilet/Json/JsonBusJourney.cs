@@ -63,7 +63,7 @@ namespace obilet.Model.obilet.Abstract.Json
         [JsonProperty(PropertyName = "display-offset", NullValueHandling = NullValueHandling.Ignore)]
         public TimeSpan DisplayOffset { get; set; }
 
-        [JsonProperty(PropertyName = "partner-rating")]
+        [JsonProperty(PropertyName = "partner-rating", NullValueHandling = NullValueHandling.Ignore)]
         public decimal PartnerRating { get; set; }
     }
 }

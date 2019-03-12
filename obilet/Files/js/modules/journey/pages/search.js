@@ -37,7 +37,17 @@
 
         _views.submit.views.button.set_text("Bileti Bul");
         _views.submit.views.button.onClick(function () {
-            $nav.to("search_results", "right", "center", "center", "left");
+
+            $api.journeys(function (_text, _json, _response) {
+
+                $data.journeys = _json.data.journeys;
+
+                $nav.to("search_results", "right", "center", "center", "left");
+
+            }, function () {
+
+            });            
+
         });
 
         _views.rest.views.inset.views.text.set_family("roboto");

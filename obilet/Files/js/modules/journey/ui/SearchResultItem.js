@@ -94,7 +94,7 @@
         _views.item.views.top.views.left.views.origin.views.top.views.text.set_size("tiny");
         _views.item.views.top.views.left.views.origin.views.top.views.text.set_color("blueDark");
 
-        _views.item.views.top.views.left.views.origin.views.bottom.views.text.set_text("09:30");
+        _views.item.views.top.views.left.views.origin.views.bottom.views.text.set_text("");
         _views.item.views.top.views.left.views.origin.views.bottom.views.text.set_family("opensans");
         _views.item.views.top.views.left.views.origin.views.bottom.views.text.set_align("center");
         _views.item.views.top.views.left.views.origin.views.bottom.views.text.set_weight("semibold");
@@ -108,14 +108,14 @@
         _views.item.views.top.views.left.views.destination.views.top.views.text.set_size("tiny");
         _views.item.views.top.views.left.views.destination.views.top.views.text.set_color("blueDark");
 
-        _views.item.views.top.views.left.views.destination.views.bottom.views.text.set_text("15:30");
+        _views.item.views.top.views.left.views.destination.views.bottom.views.text.set_text("");
         _views.item.views.top.views.left.views.destination.views.bottom.views.text.set_family("opensans");
         _views.item.views.top.views.left.views.destination.views.bottom.views.text.set_align("center");
         _views.item.views.top.views.left.views.destination.views.bottom.views.text.set_weight("semibold");
         _views.item.views.top.views.left.views.destination.views.bottom.views.text.set_size("small");
         _views.item.views.top.views.left.views.destination.views.bottom.views.text.set_color("blueDarker");
 
-        _views.item.views.bottom.views.text.set_text("Esenler Otogarı - Ankara Aşti Otogarı");
+        _views.item.views.bottom.views.text.set_text("");
         _views.item.views.bottom.views.text.set_family("opensans");
         _views.item.views.bottom.views.text.set_align("left");
         _views.item.views.bottom.views.text.set_weight("regular");

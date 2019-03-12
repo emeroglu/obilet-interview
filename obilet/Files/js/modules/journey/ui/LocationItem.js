@@ -24,7 +24,7 @@
 
     $protected.override.void.on_feed = function (_views) {
 
-        _views.item.views.text.set_text("İstanbul Avrupa");
+        _views.item.views.text.set_text("");
         _views.item.views.text.set_family("roboto");
         _views.item.views.text.set_align("center");
         _views.item.views.text.set_weight("regular");

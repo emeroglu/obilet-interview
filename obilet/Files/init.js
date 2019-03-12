@@ -17,6 +17,35 @@ String.prototype.capitalize = function () {
 
 };
 
+Date.prototype.truncate = function () {
+
+    let day = this.getDate();
+    let month = this.getMonth() + 1;
+    let year = this.getFullYear();
+
+    if (month < 10)
+        month = "0" + month;
+
+    return year + "-" + month + "-" + day + " 12:00:00";
+
+};
+
+Date.prototype.shorten = function () {
+
+    let months = ["Ocak", "Şubat", "Mart", "Nisan", "Mayıs", "Haziran", "Temmuz", "Ağustos", "Eylül", "Ekim", "Kasım", "Aralık"];
+    let days = ["Pazar", "Pazartesi", "Salı", "Çarşamba", "Perşembe", "Cuma", "Cumartesi"];    
+
+    let day = this.getDate();
+    let month = months[this.getMonth()];
+    let dow = days[this.getDay()];
+
+    if (month < 10)
+        month = "0" + month;
+
+    return day + " " + month + " " + dow;
+
+};
+
 $window.onresize = function () {
 
     let w = $window.innerWidth;

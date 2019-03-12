@@ -36,14 +36,14 @@
             $nav.to("search", "left", "center", "center", "right");
         });
 
-        _views.route.views.text.set_text("İstanbul Avrupa - Ankara");
+        _views.route.views.text.set_text($data.origin.name + " - " + $data.destination.name);
         _views.route.views.text.set_family("opensans");
         _views.route.views.text.set_align("center");
         _views.route.views.text.set_weight("semibold");
         _views.route.views.text.set_size("smaller");
         _views.route.views.text.set_color("white");  
 
-        _views.date.views.text.set_text("25 Ekim Perşembe");
+        _views.date.views.text.set_text($data.date.shorten());
         _views.date.views.text.set_family("opensans");
         _views.date.views.text.set_align("center");
         _views.date.views.text.set_weight("regular");
@@ -56,7 +56,7 @@
                     return SearchResultItem;
                 })
                 .onModel(function () {
-                    return ["a", "b"];
+                    return $data.journeys;
                 })
                 .onConstruct(function (_item, _model, _index) {                    
 
@@ -66,7 +66,49 @@
                 })
                 .onFeed(function (_item, _model, _index) {
 
+                })
+                .onReady(function (_item, _model, _index) {
+
+                    _item.views.item.views.top.views.right.views.price.views.text.set_text(_model.price);
+                    _item.views.item.views.top.views.right.views.price.views.text.apply();
+
+                    _item.views.item.views.top.views.left.views.origin.views.bottom.views.text.set_text(_model.departureTime);
+                    _item.views.item.views.top.views.left.views.origin.views.bottom.views.text.apply();
+
+                    _item.views.item.views.top.views.left.views.destination.views.bottom.views.text.set_text(_model.arrivalTime);
+                    _item.views.item.views.top.views.left.views.destination.views.bottom.views.text.apply();
+
+                    _item.views.item.views.bottom.views.text.set_text(_model.origin.name + " - " + _model.destination.name);
+                    _item.views.item.views.bottom.views.text.apply();                    
+
+                })
+                .onUpdate(function (_item, _model, _index) {
+
+                    _item.views.item.views.top.views.right.views.price.views.text.set_text(_model.price);
+                    _item.views.item.views.top.views.right.views.price.views.text.apply();
+
+                    _item.views.item.views.top.views.left.views.origin.views.bottom.views.text.set_text(_model.departureTime);
+                    _item.views.item.views.top.views.left.views.origin.views.bottom.views.text.apply();
+
+                    _item.views.item.views.top.views.left.views.destination.views.bottom.views.text.set_text(_model.arrivalTime);
+                    _item.views.item.views.top.views.left.views.destination.views.bottom.views.text.apply();
+
+                    _item.views.item.views.bottom.views.text.set_text(_model.origin.name + " - " + _model.destination.name);
+                    _item.views.item.views.bottom.views.text.apply();
+
                 });
+
+    };
+
+    $protected.override.void.on_show = function (_views) {
+
+        _views.route.views.text.set_text($data.origin.name + " - " + $data.destination.name);
+        _views.route.views.text.apply();
+
+        _views.date.views.text.set_text($data.date.shorten());
+        _views.date.views.text.apply();
+
+        _views.list.views.list.update();
 
     };
 

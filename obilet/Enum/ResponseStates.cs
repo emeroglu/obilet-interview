@@ -17,6 +17,9 @@ namespace obilet.Enum
         InvalidLocation,
 
         [EnumMember(Value = "Timeout")]
-        Timeout
+        Timeout,
+
+        [EnumMember(Value = "Unknown")]
+        Unknown
     }
 }

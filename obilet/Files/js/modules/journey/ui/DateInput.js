@@ -4,10 +4,7 @@
     $private.field.tomorrow = null;
 
     $private.field.months = ["Ocak", "Şubat", "Mart", "Nisan", "Mayıs", "Haziran", "Temmuz", "Ağustos", "Eylül", "Ekim", "Kasım", "Aralık"];
-    $private.field.days = ["Pazar", "Pazartesi", "Salı", "Çarşamba", "Perşembe", "Cuma", "Cumartesi"];
-
-    $private.field.date = null;
-    $public.func.get_date = function () { return $self.date; };
+    $private.field.days = ["Pazar", "Pazartesi", "Salı", "Çarşamba", "Perşembe", "Cuma", "Cumartesi"];    
 
     $private.void.apply_today = function () {
 
@@ -37,7 +34,7 @@
                 .backgroundColor($theme.color.white)
             .commit();
 
-        $self.date = $self.today;
+        $data.date = $self.today;
 
     };
 
@@ -69,7 +66,7 @@
                 .backgroundColor($theme.color.gray)
             .commit();
 
-        $self.date = $self.tomorrow;
+        $data.date = $self.tomorrow;
 
     };
 
