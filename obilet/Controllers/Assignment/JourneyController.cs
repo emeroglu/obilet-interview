@@ -30,7 +30,7 @@ namespace obilet.Controllers.Assignment
             getBusLocationsRequestModel.Session.SessionID = locationsRequestModel.Auth.SessionKey;
             getBusLocationsRequestModel.Date = DateTime.Now;
             getBusLocationsRequestModel.Language = "tr-TR";
-            getBusLocationsRequestModel.Data = null;
+            getBusLocationsRequestModel.Data = (locationsRequestModel.Data.Query == "") ? null : locationsRequestModel.Data.Query;
 
             GetBusLocationsResponseModel getBusLocationsResponseModel = Get_Bus_Locations_Implementation(getBusLocationsRequestModel);
 

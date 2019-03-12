@@ -31,7 +31,7 @@
 
             let query = _views.bar.views.text_input.text().toLowerCase() ;
 
-            if (query.length < 3) {
+            if (query.length < 2) {
 
                 $data.location_selection = $data.locations.slice(0, 81);
 
@@ -39,21 +39,15 @@
                 
             } else {
 
-                let filtered = [];
-                let location;
+                $api.filter_locations(query, function (_text, _json, _response) {
 
-                for (let index in $data.locations) {
+                    $data.location_selection = _json.data.locations;
 
-                    location = $data.locations[index];                    
+                    _views.list.views.list.update();
 
-                    if (location.search.indexOf(query) != -1)
-                        filtered.push(location);
+                }, function () {
 
-                }
-
-                $data.location_selection = filtered;
-
-                _views.list.views.list.update();
+                });
 
             }
 

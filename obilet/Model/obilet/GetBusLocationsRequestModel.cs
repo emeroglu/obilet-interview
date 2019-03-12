@@ -2,7 +2,7 @@
 
 namespace obilet.Model.obilet
 {
-    public class GetBusLocationsRequestModel : CorePostLoginRequestModel<CoreDataModel>
+    public class GetBusLocationsRequestModel : CorePostLoginRequestModel<string>
     {        
         
     }

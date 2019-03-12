@@ -23,10 +23,33 @@
                         "sessionKey": $data.session_key,
                         "deviceKey": $data.device_key
                     },
-                    data: null
+                    data: {
+                        query: ""
+                    }
                 })
                 .onSuccess($success)
                 .onFail($fail)
+            .send();
+
+    };
+
+    $public.void.filter_locations = function (_query, $success, $fail) {
+
+        $http
+            .begin()
+            .setMethod("POST")
+            .setUrl("/journey/possible-locations")
+            .setData({
+                auth: {
+                    "sessionKey": $data.session_key,
+                    "deviceKey": $data.device_key
+                },
+                data: {
+                    query: _query
+                }
+            })
+            .onSuccess($success)
+            .onFail($fail)
             .send();
 
     };
