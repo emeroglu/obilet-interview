@@ -130,20 +130,62 @@
         });
 
         _views.origin.onClick(function () {
+
             $data.selection = "origin";
+
             $nav.to("location_selector", "right", "center", "center", "left");
+
         });
 
         _views.destination.onClick(function () {
+
             $data.selection = "destination";
+
+
+
             $nav.to("location_selector", "right", "center", "center", "left");
+
         });
 
     };
 
     $protected.override.void.on_ready = function (_views, $ready) {        
 
-        $bcast.listen("update_route", function () { $self.apply(); });
+        $bcast.listen("update_route", function () {
+
+            if ($data.origin.id == $data.destination.id) {
+
+                if ($data.selection == "origin") {
+
+                    alert();
+
+                    for (let index in $data.cities) {
+
+                        if ($data.origin.id != $data.cities[index].id) {
+                            $data.destination = $data.cities[index];
+                            break;
+                        }
+
+                    }
+
+                } else if ($data.selection == "destination") {
+
+                    for (let index in $data.cities) {
+
+                        if ($data.destination.id != $data.cities[index].id) {
+                            $data.origin = $data.cities[index];
+                            break;
+                        }
+
+                    }
+
+                }
+
+            }
+
+            $self.apply();
+
+        });
 
         $self.apply();
 

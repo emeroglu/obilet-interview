@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using obilet.Controllers.obilet;
+using obilet.Enum;
 using obilet.Model.Assignment;
 using obilet.Model.Assignment.Json;
 using obilet.Model.obilet;
@@ -83,39 +84,55 @@ namespace obilet.Controllers.Assignment
             getBusJourneysRequestModel.Data.DepartureDate = journeysRequestModel.Data.Date;
 
             GetBusJourneysResponseModel getBusJourneysResponseModel = Get_Bus_Journeys_Implementation(getBusJourneysRequestModel);
+            JourneysResponseModel journeysResponseModel;
 
-            JourneysDataModel journeysDataModel = new JourneysDataModel();
-            journeysDataModel.Journeys = new List<JsonJourney>();
-
-            foreach (Model.obilet.Abstract.Json.JsonBusJourney busJourney in getBusJourneysResponseModel.Data)
+            if (getBusJourneysResponseModel.Status == ResponseStates.Success)
             {
-                journeysDataModel.Journeys.Add(new JsonJourney()
+                JourneysDataModel journeysDataModel = new JourneysDataModel();
+                journeysDataModel.Journeys = new List<JsonJourney>();
+
+                foreach (Model.obilet.Abstract.Json.JsonBusJourney busJourney in getBusJourneysResponseModel.Data)
                 {
-                    DepartureTime = busJourney.Journey.Departure.ToString("HH:mm"),
-                    ArrivalTime = busJourney.Journey.Arrival.ToString("HH:mm"),
-                    Origin = new JsonLocation()
+                    journeysDataModel.Journeys.Add(new JsonJourney()
                     {
-                        ID = busJourney.OriginLocationID,                        
-                        Name = busJourney.OriginLocation
-                    },
-                    Destination = new JsonLocation()
+                        DepartureTime = busJourney.Journey.Departure.ToString("HH:mm"),
+                        ArrivalTime = busJourney.Journey.Arrival.ToString("HH:mm"),
+                        Origin = new JsonLocation()
+                        {
+                            ID = busJourney.OriginLocationID,
+                            Name = busJourney.OriginLocation
+                        },
+                        Destination = new JsonLocation()
+                        {
+                            ID = busJourney.DestinationLocationID,
+                            Name = busJourney.DestinationLocation
+                        },
+                        Price = busJourney.Journey.InternetPrice + " " + busJourney.Journey.Currency
+                    });
+                }
+
+                journeysResponseModel = new JourneysResponseModel()
+                {
+                    Meta = new JsonMeta()
                     {
-                        ID = busJourney.DestinationLocationID,                        
-                        Name = busJourney.DestinationLocation
+                        Status = "success",
+                        Message = "Everything is fine"
                     },
-                    Price = busJourney.Journey.InternetPrice + " " + busJourney.Journey.Currency
-                });
+                    Data = journeysDataModel
+                };
             }
-
-            JourneysResponseModel journeysResponseModel = new JourneysResponseModel()
+            else
             {
-                Meta = new JsonMeta()
+                journeysResponseModel = new JourneysResponseModel()
                 {
-                    Status = "success",
-                    Message = "Everything is fine"
-                },
-                Data = journeysDataModel
-            };
+                    Meta = new JsonMeta()
+                    {
+                        Status = "fail",
+                        Message = "Something went wrong"
+                    },
+                    Data = null
+                };
+            }
 
             string content = JsonConvert.SerializeObject(journeysResponseModel);
 

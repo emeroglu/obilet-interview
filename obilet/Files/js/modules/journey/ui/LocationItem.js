@@ -36,9 +36,7 @@
             if ($data.selection == "origin")
                 $data.origin = $self.model;
             else if ($data.selection == "destination")
-                $data.destination = $self.model;
-
-            $data.selection = "";
+                $data.destination = $self.model;            
 
             $bcast.shout("update_route");
 

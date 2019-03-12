@@ -14,6 +14,9 @@
     $private.void.on_success = function (_response) { };
     $public.delegate.onSuccess = function ($delegate) { $self.on_success = $delegate; return $self; };
 
+    $private.void.on_fail = function (_response) { };
+    $public.delegate.onFail = function ($delegate) { $self.on_fail = $delegate; return $self; };
+
     $private.void.on_error = function (_response) { };
     $public.delegate.onError = function ($delegate) { $self.on_error = $delegate; return $self; };
 
@@ -31,7 +34,10 @@
                     response.text = $self.xhr.responseText;
                     response.json = JSON.parse($self.xhr.responseText);
 
-                    $self.on_success(response);
+                    if (response.json.meta.status == "success")
+                        $self.on_success(response);
+                    else
+                        $self.on_fail(response);
 
                 } else {
 

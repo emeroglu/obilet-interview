@@ -16,8 +16,8 @@
     $private.void.on_success = function (_text, _json, _response) { };
     $public.delegate.onSuccess = function ($delegate) { $self.on_success = $delegate; return $self; };
 
-    $private.void.on_error = function (_response) { };
-    $public.delegate.onError = function ($delegate) { $self.on_error = $delegate; return $self; };
+    $private.void.on_fail = function (_response) { };
+    $public.delegate.onFail = function ($delegate) { $self.on_fail = $delegate; return $self; };
 
     $public.void.send = function () {
 
@@ -29,9 +29,9 @@
             $self.on_success(_response.text, _response.json, _response);
 
         });
-        $self.request.onError(function (_response) {
+        $self.request.onFail(function (_response) {
 
-            $self.on_error(_response.text, _response.json, _response);
+            $self.on_fail(_response.text, _response.json, _response);
 
         });
         $self.request.send();

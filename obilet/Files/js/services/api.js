@@ -7,7 +7,7 @@
                 .setMethod("POST")
                 .setUrl("/auth/new-session")                
                 .onSuccess($success)
-                .onError($fail)
+                .onFail($fail)
             .send();
 
     };
@@ -26,7 +26,7 @@
                     data: null
                 })
                 .onSuccess($success)
-                .onError($fail)
+                .onFail($fail)
             .send();
 
     };
@@ -35,21 +35,21 @@
 
         $http
             .begin()
-            .setMethod("POST")
-            .setUrl("/journey/journeys")
-            .setData({
-                auth: {
-                    "sessionKey": $data.session_key,
-                    "deviceKey": $data.device_key
-                },
-                data: {
-                    "originId": $data.origin.id,
-                    "destinationId": $data.destination.id,
-                    "date": $data.date.truncate()
-                }
-            })
-            .onSuccess($success)
-            .onError($fail)
+                .setMethod("POST")
+                .setUrl("/journey/journeys")
+                .setData({
+                    auth: {
+                        "sessionKey": $data.session_key,
+                        "deviceKey": $data.device_key
+                    },
+                    data: {
+                        "originId": $data.origin.id,
+                        "destinationId": $data.destination.id,
+                        "date": $data.date.truncate()
+                    }
+                })
+                .onSuccess($success)
+                .onFail($fail)
             .send();
 
     };
