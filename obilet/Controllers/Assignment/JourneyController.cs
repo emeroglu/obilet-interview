@@ -17,7 +17,7 @@ namespace obilet.Controllers.Assignment
     public partial class AssignmentController : obiletController
     {
         [HttpPost]
-        [Route("journey/possible-locations")]
+        [Route("journey/locations")]
         public HttpResponseMessage PossibleLocations()
         {
             string body = Request.Content.ReadAsStringAsync().Result;

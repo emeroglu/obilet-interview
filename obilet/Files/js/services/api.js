@@ -17,7 +17,7 @@
         $http
             .begin()
                 .setMethod("POST")
-                .setUrl("/journey/possible-locations")
+                .setUrl("/journey/locations")
                 .setData({
                     auth: {
                         "sessionKey": $data.session_key,
@@ -38,7 +38,7 @@
         $http
             .begin()
             .setMethod("POST")
-            .setUrl("/journey/possible-locations")
+            .setUrl("/journey/locations")
             .setData({
                 auth: {
                     "sessionKey": $data.session_key,
