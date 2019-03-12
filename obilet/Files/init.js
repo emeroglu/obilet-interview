@@ -161,9 +161,7 @@ $fetch
                                             setTimeout(function () {
                                                 cover.remove();
                                             }, 550);
-
                                             
-
                                         })
                                     .load();
 

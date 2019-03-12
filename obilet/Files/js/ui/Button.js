@@ -1,5 +1,7 @@
 ﻿$js.compile("Button", View, function ($public, $private, $protected, $self) {
 
+    $protected.override.func.on_key = function () { return "button"; };
+
     $private.field.text = "";
     $public.void.set_text = function (_text) { $self.text = _text; };        
 
@@ -7,9 +9,7 @@
 
         $self.element.innerHTML = $self.text;      
 
-    };
-
-    $protected.override.func.on_key = function () { return "button"; };
+    };    
 
     $protected.override.void.on_compile = function () {
 

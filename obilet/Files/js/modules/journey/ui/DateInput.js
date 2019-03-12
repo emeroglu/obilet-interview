@@ -1,5 +1,7 @@
 ﻿$js.compile("DateInput", View, function ($public, $private, $protected, $self) {    
 
+    $protected.override.func.on_key = function () { return "date-input"; };
+
     $private.field.today = null;
     $private.field.tomorrow = null;
 
@@ -68,9 +70,7 @@
 
         $data.date = $self.tomorrow;
 
-    };
-
-    $protected.override.func.on_key = function () { return "date-input"; };
+    };    
 
     $protected.override.void.on_construct = function (_views) {
 

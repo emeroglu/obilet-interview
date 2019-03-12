@@ -1,5 +1,7 @@
 ﻿$js.compile("RouteInput", View, function ($public, $private, $protected, $self) {    
 
+    $protected.override.func.on_key = function () { return "route-input"; };
+
     $public.override.void.apply = function () {
 
         $cookie.store("last_selected_origin_id", $data.origin.id);
@@ -11,9 +13,7 @@
         $self.views.destination.views.right.views.bottom.views.text.set_text($data.destination.name);
         $self.views.destination.views.right.views.bottom.views.text.apply();
 
-    };
-
-    $protected.override.func.on_key = function () { return "route-input"; };
+    };    
 
     $protected.override.void.on_construct = function (_views) {
 

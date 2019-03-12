@@ -1,5 +1,7 @@
 ﻿$js.compile("TextView", View, function ($public, $private, $protected, $self) {
 
+    $protected.override.func.on_key = function () { return "text-view"; };
+
     $private.field.text = "";
     $public.void.set_text = function (_text) { $self.text = _text; };
 
@@ -35,9 +37,7 @@
         $self.element.setAttribute("o-height", $self.height);
         $self.element.setAttribute("o-line-height", $self.line_height);
 
-    };
-
-    $protected.override.func.on_key = function () { return "text-view"; };
+    };    
 
     $protected.override.void.on_compile = function () {
 

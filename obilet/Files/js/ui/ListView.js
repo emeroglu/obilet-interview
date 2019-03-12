@@ -1,5 +1,7 @@
 ﻿$js.compile("ListView", View, function ($public, $private, $protected, $self) {
 
+    $protected.override.func.on_key = function () { return "list-view"; };
+
     $private.field.container = null;
 
     $private.field.model = [];
@@ -72,9 +74,7 @@
 
         }
 
-    };
-
-    $protected.override.func.on_key = function () { return "list-view"; };
+    };   
 
     $protected.func.on_item = function () { return []; };
     $public.delegate.onItem = function ($delegate) { $self.on_item = $delegate; return $self; };

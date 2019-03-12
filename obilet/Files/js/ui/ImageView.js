@@ -1,5 +1,7 @@
 ﻿$js.compile("ImageView", View, function ($public, $private, $protected, $self) {
 
+    $protected.override.func.on_key = function () { return "image-view"; };
+
     $private.field.img = null;
 
     $private.field.src = "";
@@ -9,9 +11,7 @@
 
         $self.img.src = $self.src;
 
-    };
-
-    $protected.override.func.on_key = function () { return "image-view"; };
+    };    
 
     $protected.override.func.on_compile = function () {
 

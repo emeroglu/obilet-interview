@@ -1,5 +1,7 @@
 ﻿$js.compile("TextInput", View, function ($public, $private, $protected, $self) {
 
+    $protected.override.func.on_key = function () { return "text-input"; };
+
     $private.field.input = null;
 
     $private.field.placeholder = "";
@@ -12,9 +14,7 @@
     $public.delegate.onChange = function ($delegate) { $self.on_change = $delegate; return $self; };
 
     $private.void.on_key_release = function () { };
-    $public.delegate.onKeyRelease = function ($delegate) { $self.on_key_release = $delegate; return $self; };    
-
-    $protected.override.func.on_key = function () { return "text-input"; };
+    $public.delegate.onKeyRelease = function ($delegate) { $self.on_key_release = $delegate; return $self; };        
 
     $protected.override.func.on_compile = function () {
 
