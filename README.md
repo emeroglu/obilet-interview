@@ -16,4 +16,4 @@ The assignment is for evaluating C# skills, so ProxyController would be too easy
 This controller is a subset of obilet controller that is only for this assignment's purposes. It has its own json structure where some unnecessary fields coming from obilet are omitted.
 
 # Frontend Specs
-Frontend does not use any library or frameworks.
+Frontend does not use any library or frameworks. It has its own framework where some C#-style inheritance and access-modifiers are implemented. It lacks ListView performance. ListView needs to implement Android's RecyclerView or Ionic's infinite scroll. That's due later for some other project.
