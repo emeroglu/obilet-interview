@@ -1,5 +1,21 @@
 ﻿$js.compile("RouteInput", View, function ($public, $private, $protected, $self) {
 
+    $private.field.origin = {};
+    $public.void.set_origin = function (_origin) { $self.origin = _origin; };
+
+    $private.field.destination = {};
+    $public.void.set_destination = function (_destination) { $self.destination = _destination; };
+
+    $public.override.void.apply = function () {
+
+        $self.views.origin.views.right.views.bottom.views.text.set_text($self.origin.name);
+        $self.views.origin.views.right.views.bottom.views.text.apply();
+
+        $self.views.destination.views.right.views.bottom.views.text.set_text($self.destination.name);
+        $self.views.destination.views.right.views.bottom.views.text.apply();
+
+    };
+
     $protected.override.func.on_key = function () { return "route-input"; };
 
     $protected.override.void.on_construct = function (_views) {
@@ -38,13 +54,13 @@
         _views.destination.views.right.views.top.set_name("destination_right_top");
 
         _views.destination.views.right.views.bottom = new RelativeLayout();
-        _views.destination.views.right.views.bottom.set_name("destination_right_bottom");
-
-        _views.swap = new AbsoluteLayout();
-        _views.swap.set_name("swap");
+        _views.destination.views.right.views.bottom.set_name("destination_right_bottom");        
 
         _views.ring = new AbsoluteLayout();
         _views.ring.set_name("ring");
+
+        _views.swap = new AbsoluteLayout();
+        _views.swap.set_name("swap");
     
     };
 
@@ -65,7 +81,7 @@
 
         _views.origin.views.right.views.bottom.views.text = new TextView();
         _views.origin.views.right.views.bottom.views.text.set_name("origin_text");
-        _views.origin.views.right.views.bottom.views.text.set_text("İstanbul Avrupa");
+        _views.origin.views.right.views.bottom.views.text.set_text("");
         _views.origin.views.right.views.bottom.views.text.set_family("roboto");
         _views.origin.views.right.views.bottom.views.text.set_align("left");
         _views.origin.views.right.views.bottom.views.text.set_weight("regular");
@@ -87,7 +103,7 @@
 
         _views.destination.views.right.views.bottom.views.text = new TextView();
         _views.destination.views.right.views.bottom.views.text.set_name("destination_text");
-        _views.destination.views.right.views.bottom.views.text.set_text("Ankara");
+        _views.destination.views.right.views.bottom.views.text.set_text("");
         _views.destination.views.right.views.bottom.views.text.set_family("roboto");
         _views.destination.views.right.views.bottom.views.text.set_align("left");
         _views.destination.views.right.views.bottom.views.text.set_weight("regular");
@@ -102,6 +118,16 @@
 
     $protected.extension.void.on_feed = function (_views) {
 
+        _views.swap.onClick(function () {            
+
+            let x = $self.origin;
+            $self.origin = $self.destination;
+            $self.destination = x;
+
+            $self.apply();
+
+        });
+
         _views.origin.onClick(function () {
             $nav.to("location_selector", "right", "center", "center", "left");
         });
@@ -109,6 +135,17 @@
         _views.destination.onClick(function () {
             $nav.to("location_selector", "right", "center", "center", "left");
         });
+
+    };
+
+    $protected.override.void.on_ready = function (_views, $ready) {
+
+        $self.origin = $data.locations[0];
+        $self.destination = $data.locations[2];
+
+        $self.apply();
+
+        $ready();
 
     };
 
