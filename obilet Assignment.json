@@ -205,22 +205,22 @@
 			"response": []
 		},
 		{
-			"name": "Assignment - /journey/possible-locations",
+			"name": "Assignment - /journey/locations",
 			"request": {
 				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"auth\": {\n\t\t\"sessionKey\": \"LeJyEtKQ8oL6z6GHDtxwn8Q/2orOHjR59z+zop4TxdA=\",\n\t\t\"deviceKey\": \"S2TyYRe+fwcZATyPSgZwh9XmS266Y2VEeWQ6S69kkdE=\"\n\t}\n}"
+					"raw": "{\n\t\"auth\": {\n\t\t\"sessionKey\": \"w+dzEecM5YbibTX9I0FIst6QhDSEwGRykUHLHQEtNU4=\",\n        \"deviceKey\": \"dhVDHJH0gOFXPrk2ymziOGCDwzRvwVXD/CW9xeAFRRQ=\"\n\t},\n\t\"data\": {\n\t\t\"query\": \"istanb\"\n\t}\n}"
 				},
 				"url": {
-					"raw": "{{URL}}/journey/possible-locations",
+					"raw": "{{URL}}/journey/locations",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
 						"journey",
-						"possible-locations"
+						"locations"
 					]
 				}
 			},

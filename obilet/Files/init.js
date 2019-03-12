@@ -105,45 +105,64 @@ $fetch
 
             new UIModule()
                 .begin()
-                    .onBuild(function () {
+                .onBuild(function () {
 
-                        $fetch.module("Journey", function () {
+                    let cover = document.createElement("o-cover");
+                    cover.style = "position: absolute; width: 100vw; height: 100vh; top: 0px; left: 0px; margin: 0; padding: 0; background-color: #FFFFFF; opacity: 1; z-index: 1;";
+                    cover.className = "o-ease-500";
 
-                            $api.new_session(function (_text, _json, _response) {
+                    let logo = document.createElement("img");
+                    logo.src = $path.logo;
+                    logo.style = "position: absolute; width: 204px; height: 70px; top: calc(50% - 35px); left: calc(50% - 102px); ";
 
-                                $data.session_key = _json.data.sessionKey;
-                                $data.device_key = _json.data.deviceKey;                                
+                    cover.appendChild(logo);
+                    document.body.appendChild(cover);
 
-                                $api.possible_locations(function (_text, _json, _response) {
+                    $fetch.module("Journey", function () {
 
-                                    $data.locations = _json.data.locations;
-                                    $data.location_selection = $data.locations.slice(0, 81);
+                        $api.new_session(function (_text, _json, _response) {
 
-                                    $data.cities = $data.locations.slice(0, 81);
+                            $data.session_key = _json.data.sessionKey;
+                            $data.device_key = _json.data.deviceKey;                                
 
-                                    $data.origin = $data.locations[0];
-                                    $data.destination = $data.locations[2];
+                            $api.possible_locations(function (_text, _json, _response) {
 
-                                    new JourneyModule()
-                                        .begin()
-                                            .onLoad(function () {
+                                $data.locations = _json.data.locations;
+                                $data.location_selection = $data.locations.slice(0, 81);
 
-                                                document.getElementsByTagName("script")[0].remove();
+                                $data.cities = $data.locations.slice(0, 81);
 
-                                                $window.onresize();
+                                $data.origin = $data.locations[0];
+                                $data.destination = $data.locations[2];
 
-                                            })
-                                        .load();
+                                new JourneyModule()
+                                    .begin()
+                                        .onLoad(function () {
 
-                                });
+                                            document.getElementsByTagName("script")[0].remove();
 
-                            }, function () {
+                                            $window.onresize();
 
-                            });                            
+                                            cover.style = "position: absolute; width: 100vw; height: 100vh; top: 0px; left: 0px; margin: 0; padding: 0; background-color: #FFFFFF; opacity: 0; z-index: 1;";
 
-                        });
+                                            setTimeout(function () {
+                                                //cover.remove();
+                                            }, 550);
 
-                    })
+                                            
+
+                                        })
+                                    .load();
+
+                            });
+
+                        }, function () {
+
+                        });                            
+
+                    });
+
+                })
                 .build();                        
 
         })
